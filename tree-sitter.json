@@ -1,0 +1,41 @@
+{
+  "$schema": "https://tree-sitter.github.io/tree-sitter/assets/schemas/config.schema.json",
+  "grammars": [
+    {
+      "name": "hledger",
+      "camelcase": "HLedger",
+      "title": "hledger",
+      "scope": "source.hledger",
+      "file-types": [
+        "prices",
+        "journal"
+      ],
+      "injection-regex": "^hledger$",
+      "class-name": "TreeSitterHledger"
+    }
+  ],
+  "metadata": {
+    "version": "0.1.0",
+    "license": "MIT",
+    "description": "A parser for the hledger double-book accounting file format.",
+    "authors": [
+      {
+        "name": "Hannes Leutloff",
+        "email": "hannes.leutloff@yeldirium.de",
+        "url": "https://yeldirium.de/"
+      }
+    ],
+    "links": {
+      "repository": "https://github.com/yeldiRium/tree-sitter-hledger"
+    }
+  },
+  "bindings": {
+    "c": true,
+    "go": true,
+    "node": true,
+    "python": true,
+    "rust": true,
+    "swift": true,
+    "zig": false
+  }
+}
