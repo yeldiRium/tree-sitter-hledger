@@ -1,0 +1,72 @@
+# TODO
+
+## journal file features
+- directives
+    - [x] support account directive (`account`)
+    - [ ] support payee directive (`payee`)
+    - [ ] support tag directive (`tag`)
+    - [ ] support commodity directive (`commodity`)
+    - [ ] support alias directive (`alias`)
+    - [ ] support decimal-mark directive (`decimal-mark`)
+    - [ ] support include directive (`include`)
+    - [ ] support market price directive (`P`)
+    - [ ] support default commodity directive (`D`)
+    - [ ] support default year directive (`Y`)
+    - [ ] support prepend account directive (`apply account` and `end apply account`)
+- common types
+    - [x] support parsing accounts into segments
+    - [ ] support parsing amounts including currency
+    - [ ] support parsing dates
+    - [x] inline comments
+    - [x] tags in comments
+- transactions
+    - [ ] support basic transaction lines
+    - [ ] support recurring transactions (`~`)
+    - [ ] support auto-posted transactions (`=`)
+    - [ ] support inline comment tagged transactions
+    - postings
+        - [ ] support basic postings
+        - [ ] support postings with status indicator
+        - [ ] support virtual postings (`[...]`)
+        - [ ] support unbalanced postings (`(...)`)
+        - [ ] support assertions (`= ...`)
+        - [ ] support inline comment tagged postings
+- comments
+    - [ ] support comments starting with `;` or `#`
+    - [ ] support comments starting with `*`
+    - [x] support inline comments starting with `  ;` or `  #`
+    - [ ] support block comments (`comment` and `end comment`)
+    - [x] support tags in inline comments
+    - [ ] support indented additional comments
+- integration
+    - [ ] support finding an AST token by position in a file
+        - works for account names
+
+## language server
+- [x] bug: currently hover should give the account name under cursor, but it can't deal with the resolved includes
+- [x] cache files and track changes in memory
+    - [x] extract cache into dedicated module
+    - [x] test it
+    - optimizations:
+        - [x] don't parse file to AST in each subsequent request, but once after adding the file to the cache
+        - [x] don't parse the file immediately after adding it to the cache, but memoize the AST after it is requested the first time
+- completion
+    - account names
+        - [ ] cache list somehow
+            - since the underlying file changes while typing for the completion, this is difficult
+            - however, typing a new account name does not change the list since the currently type account name should be ignored anyway
+            - the question is: how do we recognize a cached list that is valid to use?
+        - [x] prefilter list
+            - [x] based on prefix-syntax, e.g. `exp:Ca:Che` should suggest `expenses:Cash:Checking`, if it exists
+            - [ ] fuzzy match for each segment
+        - [x] remove the currently hovered account name from the list, since it is incomplete
+- telemetry
+    - [ ] add statistics to the parser - how often is it used for which files?
+- testing
+    - [ ] write tests for server handlers. might require abstracting them a bit
+    - [ ] write benchmarks for the parser
+    - [ ] add a CI pipeline
+        - [ ] with QA (formatting, tests)
+        - [ ] with releases to
+            - [ ] github releases
+            - [ ] nix?
