@@ -1,0 +1,121 @@
+==================
+account directive with single-segment account name
+==================
+
+account expenses
+
+---
+
+(source_file
+  (account_directive
+    account_name: (account_name
+    (account_name_segment))))
+
+==================
+account directive with multi-segment account name
+==================
+
+account expenses:groceries:sweets
+
+---
+
+(source_file
+  (account_directive
+    account_name: (account_name
+    (account_name_segment)
+    (account_name_segment)
+    (account_name_segment))))
+
+==================
+account directive with multi-segment account name including whitespace
+==================
+
+account expenses:a little snack
+
+---
+
+(source_file
+  (account_directive
+    account_name: (account_name
+    (account_name_segment)
+    (account_name_segment))))
+
+==================
+account directive with multi-segment account name including special chars
+==================
+
+account expenses:groceries:indulgence:süßigkeiten
+
+---
+
+(source_file
+  (account_directive
+    account_name: (account_name
+    (account_name_segment)
+    (account_name_segment)
+    (account_name_segment)
+    (account_name_segment))))
+
+==================
+account directive with semicolon-separated inline comment
+==================
+
+account expenses:groceries  ; comment?
+
+---
+
+(source_file
+  (account_directive
+    account_name: (account_name
+    (account_name_segment)
+    (account_name_segment))
+    comment: (comment)))
+
+==================
+account directive with hash-separated inline comment
+==================
+
+account expenses:groceries  # comment?
+
+---
+
+(source_file
+  (account_directive
+    account_name: (account_name
+    (account_name_segment)
+    (account_name_segment))
+    comment: (comment)))
+
+==================
+account directive with empty inline comment
+==================
+
+account expenses:groceries  ;
+
+---
+
+(source_file
+  (account_directive
+    account_name: (account_name
+    (account_name_segment)
+    (account_name_segment))))
+
+==================
+account directive with tags in comment
+==================
+
+account expenses:groceries  # comment? fun:, expensive:15
+
+---
+
+(source_file
+  (account_directive
+    account_name: (account_name
+    (account_name_segment)
+    (account_name_segment))
+    comment: (comment
+    (tag
+      key: (tag_key))
+    (tag
+      key: (tag_key)
+      value: (tag_value)))))

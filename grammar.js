@@ -10,58 +10,70 @@
 export default grammar({
   name: "hledger",
 
+  extras: _ => [],
+
   rules: {
     source_file: $ => repeat($._definition),
 
     _definition: $ => choice(
-      $.function_definition
-      // TODO: other kinds of definitions
+      seq(optional($._spaces1), $._newline),
+      $.account_directive,
     ),
 
-    function_definition: $ => seq(
-      'func',
-      $.identifier,
-      $.parameter_list,
-      $._type,
-      $.block
+    account_directive: $ => seq(
+      "account",
+      $._spaces1,
+      field("account_name", $.account_name),
+      optional(field("comment", $._inline_comment)),
+      $._newline,
     ),
 
-    parameter_list: $ => seq(
-      '(',
-       // TODO: parameters
-      ')'
+    account_name: $ => seq(
+      $.account_name_segment,
+      repeat(seq(":", $.account_name_segment)),
     ),
 
-    _type: $ => choice(
-      'bool'
-      // TODO: other kinds of types
+    _inline_comment: $ => seq(
+      $._spaces2,
+      choice(";", "#"),
+      optional(seq(
+        $._spaces1,
+        $.comment,
+      )),
+    ),
+    
+    comment: $ => $._comment,
+
+    _comment: $ => choice(
+      seq(
+        $._comment_word,
+        optional(seq(
+          $._spaces1,
+          $._comment,
+        )),
+      ),
+      seq(
+        $.tag,
+        optional(seq(
+          ",", $._spaces1,
+          $._comment,
+        )),
+      ),
     ),
 
-    block: $ => seq(
-      '{',
-      repeat($._statement),
-      '}'
-    ),
+    tag: $ => prec.left(seq(
+      field("key", $.tag_key),
+      field("value", optional($.tag_value)),
+      optional(","),
+    )),
 
-    _statement: $ => choice(
-      $.return_statement
-      // TODO: other kinds of statements
-    ),
+    account_name_segment: _ => /[^\(\)\[\]: \n]+( [^\(\)\[\]: \n]+)*/,
+    _comment_word: _ => /[^: \n]+/,
+    tag_key: _ => /[^:, \n]+:/,
+    tag_value: _ => /[^,\n]+/,
 
-    return_statement: $ => seq(
-      'return',
-      $._expression,
-      ';'
-    ),
-
-    _expression: $ => choice(
-      $.identifier,
-      $.number
-      // TODO: other kinds of expressions
-    ),
-
-    identifier: $ => /[a-z]+/,
-
-    number: $ => /\d+/
+    _spaces1: _ => / {1,}/,
+    _spaces2: _ => / {2,}/,
+    _newline: _ => /\n/,
   }
 });
