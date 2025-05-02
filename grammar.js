@@ -7,6 +7,9 @@
 /// <reference types="tree-sitter-cli/dsl" />
 // @ts-check
 
+const comment_indicators = [";", "#", "*"];
+const inline_comment_indicators = [";", "#"];
+
 export default grammar({
   name: "hledger",
 
@@ -35,7 +38,7 @@ export default grammar({
 
     _inline_comment: $ => seq(
       $._spaces2,
-      choice(";", "#"),
+      choice(...inline_comment_indicators),
       optional(seq(
         $._spaces1,
         $.comment,
@@ -51,7 +54,7 @@ export default grammar({
 
     _inline_comment_with_tags: $ => seq(
       $._spaces2,
-      choice(";", "#"),
+      choice(...inline_comment_indicators),
       optional(seq(
         $._spaces1,
         $.comment_with_tags,
