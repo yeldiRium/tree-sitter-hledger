@@ -1,0 +1,17 @@
+{
+  "$schema": "https://raw.githubusercontent.com/jetify-com/devbox/0.10.7/.schema/devbox.schema.json",
+  "packages": [
+    "tree-sitter@0.25.1",
+    "gcc@14.2.0",
+    "nodejs@23.11.0"
+  ],
+  "env": {
+    "NIX_HARDENING_ENABLE": ""
+  },
+  "shell": {
+    "scripts": {
+      "build":    "tree-sitter generate",
+      "test":     "tree-sitter test"
+    }
+  }
+}
