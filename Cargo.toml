@@ -1,7 +1,7 @@
 [package]
 name = "tree-sitter-hledger"
 description = "A parser for the hledger double-book accounting file format."
-version = "0.2.0"
+version = "0.3.0"
 authors = ["Hannes Leutloff <hannes.leutloff@yeldirium.de>"]
 license = "MIT"
 readme = "README.md"
