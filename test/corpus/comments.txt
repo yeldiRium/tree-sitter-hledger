@@ -1,0 +1,33 @@
+==================
+comment beginning with a semicolon
+==================
+
+; this is a comment
+
+---
+
+(source_file
+  (comment))
+
+==================
+comment beginning with a hash
+==================
+
+# this is a comment
+
+---
+
+(source_file
+  (comment))
+
+==================
+comment beginning with an asterisk
+==================
+
+; this is a comment
+
+---
+
+(source_file
+  (comment))
+

@@ -21,13 +21,14 @@ export default grammar({
     _definition: $ => choice(
       seq(optional($._spaces1), $._newline),
       $.account_directive,
+      $.comment,
     ),
 
     account_directive: $ => seq(
       "account",
       $._spaces1,
       field("account_name", $.account_name),
-      optional(field("comment", $._inline_comment)),
+      optional(field("comment", $.inline_comment)),
       $._newline,
     ),
 
@@ -36,44 +37,50 @@ export default grammar({
       repeat(seq(":", $.account_name_segment)),
     ),
 
-    _inline_comment: $ => seq(
+    inline_comment: $ => seq(
       $._spaces2,
       choice(...inline_comment_indicators),
       optional(seq(
         $._spaces1,
-        $.comment,
+        $._comment_content,
       )),
     ),
-    comment: $ => seq(
+    comment: $ => prec.right(seq(
+      choice(...comment_indicators),
+      optional(seq(
+        $._spaces1,
+        $._comment_content,
+      )),
+    )),
+    _comment_content: $ => prec.right(seq(
       $._comment_word,
       repeat(seq(
         $._spaces1,
         $._comment_word,
       ))
-    ),
+    )),
 
-    _inline_comment_with_tags: $ => seq(
+    inline_comment_with_tags: $ => seq(
       $._spaces2,
       choice(...inline_comment_indicators),
       optional(seq(
         $._spaces1,
-        $.comment_with_tags,
+        $._inline_comment_with_tags_content,
       )),
     ),
-    comment_with_tags: $ => $._comment_with_tags,
-    _comment_with_tags: $ => choice(
+    _inline_comment_with_tags_content: $ => choice(
       seq(
         $._comment_word,
         optional(seq(
           $._spaces1,
-          $._comment_with_tags,
+          $._inline_comment_with_tags_content,
         )),
       ),
       seq(
         $.tag,
         optional(seq(
           ",", $._spaces1,
-          $._comment_with_tags,
+          $._inline_comment_with_tags_content,
         )),
       ),
     ),

@@ -14,19 +14,11 @@
         ]
       },
       "comment": {
-        "multiple": true,
+        "multiple": false,
         "required": false,
         "types": [
           {
-            "type": "#",
-            "named": false
-          },
-          {
-            "type": ";",
-            "named": false
-          },
-          {
-            "type": "comment",
+            "type": "inline_comment",
             "named": true
           }
         ]
@@ -54,6 +46,11 @@
     "fields": {}
   },
   {
+    "type": "inline_comment",
+    "named": true,
+    "fields": {}
+  },
+  {
     "type": "source_file",
     "named": true,
     "root": true,
@@ -65,12 +62,20 @@
         {
           "type": "account_directive",
           "named": true
+        },
+        {
+          "type": "comment",
+          "named": true
         }
       ]
     }
   },
   {
     "type": "#",
+    "named": false
+  },
+  {
+    "type": "*",
     "named": false
   },
   {

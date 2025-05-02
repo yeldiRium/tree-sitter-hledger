@@ -69,7 +69,7 @@ account expenses:groceries  ; comment?
     account_name: (account_name
     (account_name_segment)
     (account_name_segment))
-    comment: (comment)))
+    comment: (inline_comment)))
 
 ==================
 account directive with hash-separated inline comment
@@ -84,7 +84,7 @@ account expenses:groceries  # comment?
     account_name: (account_name
     (account_name_segment)
     (account_name_segment))
-    comment: (comment)))
+    comment: (inline_comment)))
 
 ==================
 account directive with empty inline comment
@@ -98,5 +98,6 @@ account expenses:groceries  ;
   (account_directive
     account_name: (account_name
     (account_name_segment)
-    (account_name_segment))))
+    (account_name_segment))
+    comment: (inline_comment)))
 

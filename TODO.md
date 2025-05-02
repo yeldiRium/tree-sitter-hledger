@@ -32,8 +32,8 @@
         - [ ] support assertions (`= ...`)
         - [ ] support inline comment tagged postings
 - comments
-    - [ ] support comments starting with `;` or `#`
-    - [ ] support comments starting with `*`
+    - [x] support comments starting with `;` or `#`
+    - [x] support comments starting with `*`
     - [x] support inline comments starting with `  ;` or `  #`
     - [ ] support block comments (`comment` and `end comment`)
     - [x] support tags in inline comments
