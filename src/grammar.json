@@ -35,11 +35,33 @@
         },
         {
           "type": "SYMBOL",
-          "name": "account_directive"
+          "name": "_directive"
         },
         {
           "type": "SYMBOL",
           "name": "comment"
+        }
+      ]
+    },
+    "_directive": {
+      "type": "SEQ",
+      "members": [
+        {
+          "type": "CHOICE",
+          "members": [
+            {
+              "type": "SYMBOL",
+              "name": "account_directive"
+            },
+            {
+              "type": "SYMBOL",
+              "name": "include_directive"
+            }
+          ]
+        },
+        {
+          "type": "SYMBOL",
+          "name": "_newline"
         }
       ]
     },
@@ -77,10 +99,43 @@
               "type": "BLANK"
             }
           ]
+        }
+      ]
+    },
+    "include_directive": {
+      "type": "SEQ",
+      "members": [
+        {
+          "type": "STRING",
+          "value": "include"
         },
         {
           "type": "SYMBOL",
-          "name": "_newline"
+          "name": "_spaces1"
+        },
+        {
+          "type": "FIELD",
+          "name": "include_path",
+          "content": {
+            "type": "SYMBOL",
+            "name": "include_path"
+          }
+        },
+        {
+          "type": "CHOICE",
+          "members": [
+            {
+              "type": "FIELD",
+              "name": "comment",
+              "content": {
+                "type": "SYMBOL",
+                "name": "inline_comment"
+              }
+            },
+            {
+              "type": "BLANK"
+            }
+          ]
         }
       ]
     },
@@ -384,6 +439,10 @@
           }
         ]
       }
+    },
+    "include_path": {
+      "type": "PATTERN",
+      "value": "[^ \\n]+( [^ \\n]+)*"
     },
     "account_name_segment": {
       "type": "PATTERN",

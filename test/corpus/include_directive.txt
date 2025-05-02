@@ -1,0 +1,87 @@
+==================
+include directive with file path
+==================
+
+include some/path.journal
+
+---
+
+(source_file
+  (include_directive
+    include_path: (include_path)))
+
+==================
+include directive with file path including whitespace
+==================
+
+include some/path to file.journal
+
+---
+
+(source_file
+  (include_directive
+    include_path: (include_path)))
+
+==================
+include directive with file path including special characters
+==================
+
+include some/hür/dür/ß.journal
+
+---
+
+(source_file
+  (include_directive
+    include_path: (include_path)))
+
+==================
+include directive with multiple spaces before the include path
+==================
+
+include    some/path.journal
+
+---
+
+(source_file
+  (include_directive
+    include_path: (include_path)))
+
+==================
+include directive with semicolon-separated inline comment
+==================
+
+include some/path.journal  ; comment?
+
+---
+
+(source_file
+  (include_directive
+    include_path: (include_path)
+    comment: (inline_comment)))
+
+==================
+include directive with hash-separated inline comment
+==================
+
+include some/path.journal  # comment?
+
+---
+
+(source_file
+  (include_directive
+    include_path: (include_path)
+    comment: (inline_comment)))
+
+==================
+include directive with empty inline comment
+==================
+
+include some/path.journal  ;
+
+---
+
+(source_file
+  (include_directive
+    include_path: (include_path)
+    comment: (inline_comment)))
+

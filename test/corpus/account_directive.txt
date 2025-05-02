@@ -57,6 +57,19 @@ account expenses:groceries:indulgence:süßigkeiten
     (account_name_segment))))
 
 ==================
+account directive with multiple spaces before the account name
+==================
+
+account    expenses
+
+---
+
+(source_file
+  (account_directive
+    account_name: (account_name
+    (account_name_segment))))
+
+==================
 account directive with semicolon-separated inline comment
 ==================
 

@@ -46,6 +46,32 @@
     "fields": {}
   },
   {
+    "type": "include_directive",
+    "named": true,
+    "fields": {
+      "comment": {
+        "multiple": false,
+        "required": false,
+        "types": [
+          {
+            "type": "inline_comment",
+            "named": true
+          }
+        ]
+      },
+      "include_path": {
+        "multiple": false,
+        "required": true,
+        "types": [
+          {
+            "type": "include_path",
+            "named": true
+          }
+        ]
+      }
+    }
+  },
+  {
     "type": "inline_comment",
     "named": true,
     "fields": {}
@@ -65,6 +91,10 @@
         },
         {
           "type": "comment",
+          "named": true
+        },
+        {
+          "type": "include_directive",
           "named": true
         }
       ]
@@ -92,6 +122,14 @@
   },
   {
     "type": "account_name_segment",
+    "named": true
+  },
+  {
+    "type": "include",
+    "named": false
+  },
+  {
+    "type": "include_path",
     "named": true
   }
 ]

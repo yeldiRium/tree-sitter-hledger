@@ -20,8 +20,19 @@ export default grammar({
 
     _definition: $ => choice(
       seq(optional($._spaces1), $._newline),
-      $.account_directive,
+      $._directive,
       $.comment,
+    ),
+
+    //==================
+    // Directives
+    //==================
+    _directive: $ => seq(
+      choice(
+        $.account_directive,
+        $.include_directive,
+      ),
+      $._newline,
     ),
 
     account_directive: $ => seq(
@@ -29,14 +40,26 @@ export default grammar({
       $._spaces1,
       field("account_name", $.account_name),
       optional(field("comment", $.inline_comment)),
-      $._newline,
     ),
 
+    include_directive: $ => seq(
+      "include",
+      $._spaces1,
+      field("include_path", $.include_path),
+      optional(field("comment", $.inline_comment)),
+    ),
+
+    //==================
+    // Components
+    //==================
     account_name: $ => seq(
       $.account_name_segment,
       repeat(seq(":", $.account_name_segment)),
     ),
 
+    //==================
+    // Comments
+    //==================
     inline_comment: $ => seq(
       $._spaces2,
       choice(...inline_comment_indicators),
@@ -91,6 +114,13 @@ export default grammar({
       optional(","),
     )),
 
+    //==================
+    // Tokens
+    // Some of these seem unnecessarily complex. They are written to avoid
+    // double-spaces, since hledger uses double spaces to recognize the
+    // beginning of an inline comment.
+    //==================
+    include_path: _ => /[^ \n]+( [^ \n]+)*/,
     account_name_segment: _ => /[^\(\)\[\]: \n]+( [^\(\)\[\]: \n]+)*/,
     _comment_word: _ => /[^: \n]+/,
     tag_key: _ => /[^:, \n]+:/,
