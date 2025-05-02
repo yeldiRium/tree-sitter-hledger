@@ -41,22 +41,36 @@ export default grammar({
         $.comment,
       )),
     ),
-    
-    comment: $ => $._comment,
+    comment: $ => seq(
+      $._comment_word,
+      repeat(seq(
+        $._spaces1,
+        $._comment_word,
+      ))
+    ),
 
-    _comment: $ => choice(
+    _inline_comment_with_tags: $ => seq(
+      $._spaces2,
+      choice(";", "#"),
+      optional(seq(
+        $._spaces1,
+        $.comment_with_tags,
+      )),
+    ),
+    comment_with_tags: $ => $._comment_with_tags,
+    _comment_with_tags: $ => choice(
       seq(
         $._comment_word,
         optional(seq(
           $._spaces1,
-          $._comment,
+          $._comment_with_tags,
         )),
       ),
       seq(
         $.tag,
         optional(seq(
           ",", $._spaces1,
-          $._comment,
+          $._comment_with_tags,
         )),
       ),
     ),

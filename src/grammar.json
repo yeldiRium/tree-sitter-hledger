@@ -149,10 +149,78 @@
       ]
     },
     "comment": {
-      "type": "SYMBOL",
-      "name": "_comment"
+      "type": "SEQ",
+      "members": [
+        {
+          "type": "SYMBOL",
+          "name": "_comment_word"
+        },
+        {
+          "type": "REPEAT",
+          "content": {
+            "type": "SEQ",
+            "members": [
+              {
+                "type": "SYMBOL",
+                "name": "_spaces1"
+              },
+              {
+                "type": "SYMBOL",
+                "name": "_comment_word"
+              }
+            ]
+          }
+        }
+      ]
     },
-    "_comment": {
+    "_inline_comment_with_tags": {
+      "type": "SEQ",
+      "members": [
+        {
+          "type": "SYMBOL",
+          "name": "_spaces2"
+        },
+        {
+          "type": "CHOICE",
+          "members": [
+            {
+              "type": "STRING",
+              "value": ";"
+            },
+            {
+              "type": "STRING",
+              "value": "#"
+            }
+          ]
+        },
+        {
+          "type": "CHOICE",
+          "members": [
+            {
+              "type": "SEQ",
+              "members": [
+                {
+                  "type": "SYMBOL",
+                  "name": "_spaces1"
+                },
+                {
+                  "type": "SYMBOL",
+                  "name": "comment_with_tags"
+                }
+              ]
+            },
+            {
+              "type": "BLANK"
+            }
+          ]
+        }
+      ]
+    },
+    "comment_with_tags": {
+      "type": "SYMBOL",
+      "name": "_comment_with_tags"
+    },
+    "_comment_with_tags": {
       "type": "CHOICE",
       "members": [
         {
@@ -174,7 +242,7 @@
                     },
                     {
                       "type": "SYMBOL",
-                      "name": "_comment"
+                      "name": "_comment_with_tags"
                     }
                   ]
                 },
@@ -208,7 +276,7 @@
                     },
                     {
                       "type": "SYMBOL",
-                      "name": "_comment"
+                      "name": "_comment_with_tags"
                     }
                   ]
                 },
