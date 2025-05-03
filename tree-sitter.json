@@ -15,7 +15,7 @@
     }
   ],
   "metadata": {
-    "version": "0.4.0",
+    "version": "0.5.0",
     "license": "MIT",
     "description": "A parser for the hledger double-book accounting file format.",
     "authors": [

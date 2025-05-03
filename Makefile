@@ -4,7 +4,7 @@ endif
 
 LANGUAGE_NAME := tree-sitter-hledger
 HOMEPAGE_URL := https://github.com/yeldirium/tree-sitter-hledger
-VERSION := 0.4.0
+VERSION := 0.5.0
 
 # repository
 SRC_DIR := src
