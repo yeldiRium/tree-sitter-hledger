@@ -22,12 +22,12 @@
 enum ts_symbol_identifiers {
   anon_sym_account = 1,
   anon_sym_include = 2,
-  anon_sym_COLON = 3,
-  anon_sym_SEMI = 4,
-  anon_sym_POUND = 5,
-  anon_sym_STAR = 6,
-  sym_include_path = 7,
-  sym_account_name_segment = 8,
+  anon_sym_SEMI = 3,
+  anon_sym_POUND = 4,
+  anon_sym_STAR = 5,
+  sym_include_path = 6,
+  sym_account_name_segment = 7,
+  sym__account_name_separator = 8,
   sym__comment_word = 9,
   sym__spaces1 = 10,
   sym__spaces2 = 11,
@@ -50,12 +50,12 @@ static const char * const ts_symbol_names[] = {
   [ts_builtin_sym_end] = "end",
   [anon_sym_account] = "account",
   [anon_sym_include] = "include",
-  [anon_sym_COLON] = ":",
   [anon_sym_SEMI] = ";",
   [anon_sym_POUND] = "#",
   [anon_sym_STAR] = "*",
   [sym_include_path] = "include_path",
   [sym_account_name_segment] = "account_name_segment",
+  [sym__account_name_separator] = "_account_name_separator",
   [sym__comment_word] = "_comment_word",
   [sym__spaces1] = "_spaces1",
   [sym__spaces2] = "_spaces2",
@@ -78,12 +78,12 @@ static const TSSymbol ts_symbol_map[] = {
   [ts_builtin_sym_end] = ts_builtin_sym_end,
   [anon_sym_account] = anon_sym_account,
   [anon_sym_include] = anon_sym_include,
-  [anon_sym_COLON] = anon_sym_COLON,
   [anon_sym_SEMI] = anon_sym_SEMI,
   [anon_sym_POUND] = anon_sym_POUND,
   [anon_sym_STAR] = anon_sym_STAR,
   [sym_include_path] = sym_include_path,
   [sym_account_name_segment] = sym_account_name_segment,
+  [sym__account_name_separator] = sym__account_name_separator,
   [sym__comment_word] = sym__comment_word,
   [sym__spaces1] = sym__spaces1,
   [sym__spaces2] = sym__spaces2,
@@ -115,10 +115,6 @@ static const TSSymbolMetadata ts_symbol_metadata[] = {
     .visible = true,
     .named = false,
   },
-  [anon_sym_COLON] = {
-    .visible = true,
-    .named = false,
-  },
   [anon_sym_SEMI] = {
     .visible = true,
     .named = false,
@@ -137,6 +133,10 @@ static const TSSymbolMetadata ts_symbol_metadata[] = {
   },
   [sym_account_name_segment] = {
     .visible = true,
+    .named = true,
+  },
+  [sym__account_name_separator] = {
+    .visible = false,
     .named = true,
   },
   [sym__comment_word] = {
@@ -292,10 +292,10 @@ static bool ts_lex(TSLexer *lexer, TSStateId state) {
       ADVANCE_MAP(
         '\n', 30,
         ' ', 28,
-        '#', 23,
-        '*', 24,
-        ':', 21,
-        ';', 22,
+        '#', 22,
+        '*', 23,
+        ':', 26,
+        ';', 21,
         'a', 5,
         'i', 10,
       );
@@ -303,7 +303,7 @@ static bool ts_lex(TSLexer *lexer, TSStateId state) {
     case 1:
       if (lookahead == '\n') ADVANCE(30);
       if (lookahead == ' ') ADVANCE(2);
-      if (lookahead == ':') ADVANCE(21);
+      if (lookahead == ':') ADVANCE(26);
       if (lookahead != 0) ADVANCE(27);
       END_STATE();
     case 2:
@@ -353,20 +353,20 @@ static bool ts_lex(TSLexer *lexer, TSStateId state) {
           lookahead != ')' &&
           lookahead != ':' &&
           lookahead != '[' &&
-          lookahead != ']') ADVANCE(26);
+          lookahead != ']') ADVANCE(25);
       END_STATE();
     case 16:
       if (lookahead != 0 &&
           lookahead != '\n' &&
-          lookahead != ' ') ADVANCE(25);
+          lookahead != ' ') ADVANCE(24);
       END_STATE();
     case 17:
       if (eof) ADVANCE(18);
       if (lookahead == '\n') ADVANCE(30);
       if (lookahead == ' ') ADVANCE(28);
-      if (lookahead == '#') ADVANCE(23);
-      if (lookahead == '*') ADVANCE(24);
-      if (lookahead == ';') ADVANCE(22);
+      if (lookahead == '#') ADVANCE(22);
+      if (lookahead == '*') ADVANCE(23);
+      if (lookahead == ';') ADVANCE(21);
       if (lookahead == 'a') ADVANCE(5);
       if (lookahead == 'i') ADVANCE(10);
       END_STATE();
@@ -380,24 +380,21 @@ static bool ts_lex(TSLexer *lexer, TSStateId state) {
       ACCEPT_TOKEN(anon_sym_include);
       END_STATE();
     case 21:
-      ACCEPT_TOKEN(anon_sym_COLON);
-      END_STATE();
-    case 22:
       ACCEPT_TOKEN(anon_sym_SEMI);
       END_STATE();
-    case 23:
+    case 22:
       ACCEPT_TOKEN(anon_sym_POUND);
       END_STATE();
-    case 24:
+    case 23:
       ACCEPT_TOKEN(anon_sym_STAR);
       END_STATE();
-    case 25:
+    case 24:
       ACCEPT_TOKEN(sym_include_path);
       if (lookahead == ' ') ADVANCE(16);
       if (lookahead != 0 &&
-          lookahead != '\n') ADVANCE(25);
+          lookahead != '\n') ADVANCE(24);
       END_STATE();
-    case 26:
+    case 25:
       ACCEPT_TOKEN(sym_account_name_segment);
       if (lookahead == ' ') ADVANCE(15);
       if (lookahead != 0 &&
@@ -406,7 +403,10 @@ static bool ts_lex(TSLexer *lexer, TSStateId state) {
           lookahead != ')' &&
           lookahead != ':' &&
           lookahead != '[' &&
-          lookahead != ']') ADVANCE(26);
+          lookahead != ']') ADVANCE(25);
+      END_STATE();
+    case 26:
+      ACCEPT_TOKEN(sym__account_name_separator);
       END_STATE();
     case 27:
       ACCEPT_TOKEN(sym__comment_word);
@@ -472,10 +472,10 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [ts_builtin_sym_end] = ACTIONS(1),
     [anon_sym_account] = ACTIONS(1),
     [anon_sym_include] = ACTIONS(1),
-    [anon_sym_COLON] = ACTIONS(1),
     [anon_sym_SEMI] = ACTIONS(1),
     [anon_sym_POUND] = ACTIONS(1),
     [anon_sym_STAR] = ACTIONS(1),
+    [sym__account_name_separator] = ACTIONS(1),
     [sym__spaces1] = ACTIONS(1),
     [sym__spaces2] = ACTIONS(1),
     [sym__newline] = ACTIONS(1),
@@ -624,7 +624,7 @@ static const uint16_t ts_small_parse_table[] = {
       sym__newline,
   [105] = 3,
     ACTIONS(57), 1,
-      anon_sym_COLON,
+      sym__account_name_separator,
     STATE(12), 1,
       aux_sym_account_name_repeat1,
     ACTIONS(60), 2,
@@ -632,7 +632,7 @@ static const uint16_t ts_small_parse_table[] = {
       sym__newline,
   [116] = 3,
     ACTIONS(62), 1,
-      anon_sym_COLON,
+      sym__account_name_separator,
     STATE(14), 1,
       aux_sym_account_name_repeat1,
     ACTIONS(64), 2,
@@ -640,7 +640,7 @@ static const uint16_t ts_small_parse_table[] = {
       sym__newline,
   [127] = 3,
     ACTIONS(62), 1,
-      anon_sym_COLON,
+      sym__account_name_separator,
     STATE(12), 1,
       aux_sym_account_name_repeat1,
     ACTIONS(66), 2,
@@ -662,7 +662,7 @@ static const uint16_t ts_small_parse_table[] = {
       sym_inline_comment,
   [158] = 1,
     ACTIONS(60), 3,
-      anon_sym_COLON,
+      sym__account_name_separator,
       sym__spaces2,
       sym__newline,
   [164] = 1,
@@ -853,7 +853,7 @@ TS_PUBLIC const TSLanguage *tree_sitter_hledger(void) {
     .max_reserved_word_set_size = 0,
     .metadata = {
       .major_version = 0,
-      .minor_version = 2,
+      .minor_version = 4,
       .patch_version = 0,
     },
   };

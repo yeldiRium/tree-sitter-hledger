@@ -54,7 +54,7 @@ export default grammar({
     //==================
     account_name: $ => seq(
       $.account_name_segment,
-      repeat(seq(":", $.account_name_segment)),
+      repeat(seq($._account_name_separator, $.account_name_segment)),
     ),
 
     //==================
@@ -122,6 +122,7 @@ export default grammar({
     //==================
     include_path: _ => /[^ \n]+( [^ \n]+)*/,
     account_name_segment: _ => /[^\(\)\[\]: \n]+( [^\(\)\[\]: \n]+)*/,
+    _account_name_separator: _ => /:/,
     _comment_word: _ => /[^: \n]+/,
     tag_key: _ => /[^:, \n]+:/,
     tag_value: _ => /[^,\n]+/,
