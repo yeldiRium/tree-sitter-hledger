@@ -12,7 +12,8 @@
   "shell": {
     "scripts": {
       "build": "tree-sitter generate",
-      "test":  "devbox run build && tree-sitter test"
+      "test":  "tree-sitter test --rebuild --stat all --overview-only",
+      "test:detailled":  "tree-sitter test --rebuild --stat all"
     }
   }
 }
