@@ -1,0 +1,37 @@
+==================
+transaction with all features
+==================
+2025-05-24 ! (code) Payee | why do i do this?  ; because
+    ; for some reason
+    ! expenses:expensive thing  1,000.00 $ @@ 1,234.56 €
+    ! assets:cash  -1,234.56 € ; date:2025-05-30
+    ; at least i have a few days time to pay this
+    * [expenses:stupid tax]  1.234.56 €
+    * [assets:stupid budget]  -1,234.56 €
+    * (expenses:aaaaaa) 1.234.56 €
+
+---
+
+(TODO)
+
+==================
+transaction minimal
+==================
+2025-05-24
+    expenses:groceries
+
+---
+
+(TODO)
+
+==================
+transaction average
+==================
+2025-05-24 Payee | Reason
+    expenses:groceries  12.34 €
+    assets:cash  -12.34 €
+
+---
+
+(TODO)
+
