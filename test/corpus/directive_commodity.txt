@@ -1,0 +1,56 @@
+==================
+commodity directive
+==================
+commodity $1,000.00
+commodity 1.000,00 €
+
+---
+
+(TODO)
+
+==================
+commodity directive without symbol
+==================
+commodity 1.000,00
+
+---
+
+(TODO)
+
+==================
+commodity directive without decimals
+==================
+commodity 1,000. AAA
+
+---
+
+(TODO)
+
+==================
+commodity directive with space
+==================
+commodity 1,000. "AAA BB"
+
+---
+
+(TODO)
+
+==================
+commodity directive without format
+==================
+commodity AAA
+
+---
+
+(TODO)
+
+==================
+commodity directive with format subdirective
+==================
+commodity AAA
+  format AAA 1,00,00.00
+
+---
+
+(TODO)
+

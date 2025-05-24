@@ -1,0 +1,45 @@
+==================
+alias directive
+==================
+alias old = new
+
+---
+
+(TODO)
+
+==================
+alias directive with multiple segments
+==================
+alias old:account = new:account
+
+---
+
+(TODO)
+
+==================
+alias directive with semicolon
+==================
+alias old:acco;unt = new:acco;unt
+
+---
+
+(TODO)
+
+==================
+alias directive with regex
+==================
+alias /(.*)/ = new:\1
+
+---
+
+(TODO)
+
+==================
+end aliases
+==================
+end aliases
+
+---
+
+(TODO)
+

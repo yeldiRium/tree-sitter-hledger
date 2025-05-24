@@ -1,0 +1,18 @@
+==================
+apply-account directive
+==================
+apply account new
+
+---
+
+(TODO)
+
+==================
+apply-account directive with multiple segments
+==================
+apply account new:global:parent
+
+---
+
+(TODO)
+

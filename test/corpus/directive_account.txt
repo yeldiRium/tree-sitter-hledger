@@ -1,8 +1,72 @@
 ==================
 account directive with single-segment account name
 ==================
-
 account expenses
+
+---
+
+(source_file
+  (account_directive
+    account_name: (account_name
+    (account_name_segment))))
+
+==================
+account directive with utf-8
+==================
+account expänses
+
+---
+
+(source_file
+  (account_directive
+    account_name: (account_name
+    (account_name_segment))))
+
+==================
+account directive with numeric content
+==================
+account expenses:2021:huh
+
+---
+
+(source_file
+  (account_directive
+    account_name: (account_name
+    (account_name_segment)
+    (account_name_segment)
+    (account_name_segment))))
+
+==================
+account directive with symbols
+==================
+account expenses:some-oth€r$ym&bols
+
+---
+
+(source_file
+  (account_directive
+    account_name: (account_name
+    (account_name_segment)
+    (account_name_segment))))
+
+==================
+account directive with ;
+==================
+account expenses:with;semicolon ;:oof
+
+---
+
+(source_file
+  (account_directive
+    account_name: (account_name
+    (account_name_segment)
+    (account_name_segment)
+    (account_name_segment))))
+
+==================
+account directive with single letter name
+==================
+account A
 
 ---
 
@@ -14,7 +78,6 @@ account expenses
 ==================
 account directive with multi-segment account name
 ==================
-
 account expenses:groceries:sweets
 
 ---
@@ -29,7 +92,6 @@ account expenses:groceries:sweets
 ==================
 account directive with multi-segment account name including whitespace
 ==================
-
 account expenses:a little snack
 
 ---
@@ -43,7 +105,6 @@ account expenses:a little snack
 ==================
 account directive with multi-segment account name including special chars
 ==================
-
 account expenses:groceries:indulgence:süßigkeiten
 
 ---
@@ -59,7 +120,6 @@ account expenses:groceries:indulgence:süßigkeiten
 ==================
 account directive with multiple spaces before the account name
 ==================
-
 account    expenses
 
 ---
@@ -72,7 +132,6 @@ account    expenses
 ==================
 account directive with semicolon-separated inline comment
 ==================
-
 account expenses:groceries  ; comment?
 
 ---
@@ -87,7 +146,6 @@ account expenses:groceries  ; comment?
 ==================
 account directive with hash-separated inline comment
 ==================
-
 account expenses:groceries  # comment?
 
 ---
@@ -102,7 +160,6 @@ account expenses:groceries  # comment?
 ==================
 account directive with empty inline comment
 ==================
-
 account expenses:groceries  ;
 
 ---

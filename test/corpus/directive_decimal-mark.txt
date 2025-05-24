@@ -1,0 +1,18 @@
+==================
+decimal-mark directive with .
+==================
+decimal-mark .
+
+---
+
+(TODO)
+
+==================
+decimal-mark directive with ,
+==================
+decimal-mark ,
+
+---
+
+(TODO)
+

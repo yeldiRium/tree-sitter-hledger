@@ -1,0 +1,27 @@
+==================
+payee directive
+==================
+payee Best Pizza
+
+---
+
+(TODO)
+
+==================
+payee directive with empty name
+==================
+payee ""
+
+---
+
+(TODO)
+
+==================
+payee directive with symbols
+==================
+payee thi$ pay€e i;s weird
+
+---
+
+(TODO)
+
