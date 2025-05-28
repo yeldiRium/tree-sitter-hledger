@@ -1,1 +1,1 @@
-{"author":{"id":"b10e02f99a7e85cbd961c05da68bf9ca983ca25e486805a04db4e0ad16b93119"},"ops":[{"type":1,"timestamp":1748099915,"nonce":"hcOvZmWl6bQB/TxDN4IQIZISRoY=","title":"Add test cases with syntax scope for auto postings","message":"","files":null}]}
+{"author":{"id":"b10e02f99a7e85cbd961c05da68bf9ca983ca25e486805a04db4e0ad16b93119"},"ops":[{"type":5,"timestamp":1748448396,"nonce":"oMM3JbX4FbuOgSSf+F6TPwHZ69k=","added":["tests"],"removed":null}]}
