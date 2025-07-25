@@ -78,12 +78,12 @@ Test names start with `<feature>` and have an optional suffix, if there are mult
 | Directive Decimal Mark  | Dot                                                    | Yes          | No         | No          |
 | Directive Decimal Mark  | Comma                                                  | Yes          | No         | No          |
 | Directive Decimal Mark  | Inline comment                                         | Yes          | No         | No          |
-| Directive Include       | With file path                                         | No           | No         | No          |
-| Directive Include       | With file path including glob                          | No           | No         | No          |
-| Directive Include       | With file path including whitespace                    | No           | No         | No          |
-| Directive Include       | With file path including special characters            | No           | No         | No          |
-| Directive Include       | With file path including file format prefix            | No           | No         | No          |
-| Directive Include       | With multiple spaces before file path                  | No           | No         | No          |
+| Directive Include       | With file path                                         | Yes          | No         | No          |
+| Directive Include       | With file path including glob                          | Yes          | No         | No          |
+| Directive Include       | With file path including whitespace                    | Yes          | No         | No          |
+| Directive Include       | With file path including special characters            | Yes          | No         | No          |
+| Directive Include       | With file path including file format prefix            | Yes          | No         | No          |
+| Directive Include       | With multiple spaces before file path                  | Yes          | No         | No          |
 | Directive Include       | Inline comment                                         | Yes          | No         | No          |
 | Directive P             | Minimal                                                | Yes          | No         | No          |
 | Directive P             | Inline Comment                                         | Yes          | No         | No          |

@@ -1,69 +1,56 @@
 ==================
-old: include directive with file path
+With file path
 ==================
 include some/path.journal
 
 ---
 
-(source_file
-  (include_directive
-    include_path: (include_path)))
+(TODO)
 
 ==================
-old: include directive with file path including glob
+With file path including glob
 ==================
 include some/*.journal
 
 ---
 
-(source_file
-  (include_directive
-    include_path: (include_path)))
+(TODO)
 
 ==================
-old: include directive with file path including whitespace
+With file path including whitespace
 ==================
 include some/path to file.journal
 
 ---
 
-(source_file
-  (include_directive
-    include_path: (include_path)))
+(TODO)
 
 ==================
-old: include directive with file path including special characters
+With file path including special characters
 ==================
 include some/hür/dür/ß.jou;rnal
 
 ---
 
-(source_file
-  (include_directive
-    include_path: (include_path)))
+(TODO)
 
 ==================
-old: include directive with multiple spaces before the include path
+With file path including file format prefix
+==================
+include timedot:file.journal
+
+---
+
+(TODO)
+
+==================
+With multiple spaces before the include path
 ==================
 include    some/path.journal
 
 ---
 
-(source_file
-  (include_directive
-    include_path: (include_path)))
-
-==================
-old: include directive with semicolon-separated inline comment
-==================
-include some/path.journal  ; comment?
-
----
-
-(source_file
-  (include_directive
-    include_path: (include_path)
-    comment: (inline_comment)))
+(TODO)
 
 ==================
 Inline comment
