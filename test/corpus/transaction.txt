@@ -75,6 +75,16 @@ Status Cleared
 (TODO)
 
 ==================
+Code
+==================
+2025-05-24 (code) note
+    expenses
+
+---
+
+(TODO)
+
+==================
 Inline comment
 ==================
 2025-05-24 Something ; a comment

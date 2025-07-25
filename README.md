@@ -40,10 +40,8 @@ Test names start with `<feature>` and have an optional suffix, if there are mult
 | Posting                 | Unbalanced virtual posting                             | No           | No         | No          |
 | Posting                 | Balanced virtual posting                               | No           | No         | No          |
 | Posting                 | Inline comment                                         | Yes          | No         | No          |
-| Posting                 | Inline comment with tags                               | No           | No         | No          |
-| Posting                 | Posting date                                           | No           | No         | No          |
-| Posting                 | Following comment                                      | Yes          | No         | No          |
-| Posting                 | Following comment with tags                            | No           | No         | No          |
+| Posting                 | Inline comment with tags                               | Yes          | No         | No          |
+| Posting                 | Posting date                                           | Yes          | No         | No          |
 | Periodic Transaction    | Minimal                                                | No           | No         | No          |
 | Periodic Transaction    | Description                                            | No           | No         | No          |
 | Auto Posting            | Minimal                                                | No           | No         | No          |

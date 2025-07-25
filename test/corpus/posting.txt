@@ -1,0 +1,30 @@
+==================
+Inline comment
+==================
+2025-05-24 Something
+    expenses ; a comment
+
+---
+
+(TODO)
+
+==================
+Inline comment with tags
+==================
+2025-05-24 Something
+    expenses ; a comment event:2025-05-24_cool-event, partying:
+
+---
+
+(TODO)
+
+==================
+Posting date
+==================
+2025-05-24 Something
+    expenses ; date:2025-05-28
+
+---
+
+(TODO)
+
