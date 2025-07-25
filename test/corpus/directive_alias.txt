@@ -1,5 +1,5 @@
 ==================
-old: alias directive
+Minimal
 ==================
 alias old = new
 
@@ -8,7 +8,7 @@ alias old = new
 (TODO)
 
 ==================
-old: alias directive with multiple segments
+Multi-segment name
 ==================
 alias old:account = new:account
 
@@ -17,7 +17,7 @@ alias old:account = new:account
 (TODO)
 
 ==================
-old: alias directive with semicolon
+Multi-segment name with semicolon
 ==================
 alias old:acco;unt = new:acco;unt
 
@@ -26,7 +26,7 @@ alias old:acco;unt = new:acco;unt
 (TODO)
 
 ==================
-old: alias directive with regex
+Regex
 ==================
 alias /(.*)/ = new:\1
 
@@ -35,7 +35,7 @@ alias /(.*)/ = new:\1
 (TODO)
 
 ==================
-old: end aliases
+End alias
 ==================
 end aliases
 

@@ -1,5 +1,5 @@
 ==================
-old: commodity directive
+Minimal
 ==================
 commodity $1,000.00
 commodity 1.000,00 €
@@ -9,7 +9,7 @@ commodity 1.000,00 €
 (TODO)
 
 ==================
-old: commodity directive without symbol
+Without symbol
 ==================
 commodity 1.000,00
 
@@ -18,7 +18,7 @@ commodity 1.000,00
 (TODO)
 
 ==================
-old: commodity directive without decimals
+Without decimals
 ==================
 commodity 1,000. AAA
 
@@ -27,7 +27,7 @@ commodity 1,000. AAA
 (TODO)
 
 ==================
-old: commodity directive with space
+With space
 ==================
 commodity 1,000. "AAA BB"
 
@@ -36,7 +36,7 @@ commodity 1,000. "AAA BB"
 (TODO)
 
 ==================
-old: commodity directive without format
+Without format
 ==================
 commodity AAA
 
@@ -45,7 +45,7 @@ commodity AAA
 (TODO)
 
 ==================
-old: commodity directive with format subdirective
+With format subdirective
 ==================
 commodity AAA
   format AAA 1,00,00.00

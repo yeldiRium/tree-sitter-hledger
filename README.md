@@ -58,20 +58,20 @@ Test names start with `<feature>` and have an optional suffix, if there are mult
 | Directive Account       | Inline comment with tags                               | Yes          | No         | No          |
 | Directive Account       | Following comment                                      | Yes          | No         | No          |
 | Directive Account       | Following comment with tags                            | Yes          | No         | No          |
-| Directive Alias         | Minimal                                                | No           | No         | No          |
-| Directive Alias         | Multi-segment name                                     | No           | No         | No          |
-| Directive Alias         | Regex                                                  | No           | No         | No          |
-| Directive Alias         | End alias                                              | No           | No         | No          |
+| Directive Alias         | Minimal                                                | Yes          | No         | No          |
+| Directive Alias         | Multi-segment name                                     | Yes          | No         | No          |
+| Directive Alias         | Regex                                                  | Yes          | No         | No          |
+| Directive Alias         | End alias                                              | Yes          | No         | No          |
 | Directive Alias         | Inline comment                                         | Yes          | No         | No          |
 | Directive Apply Account | Minimal                                                | Yes          | No         | No          |
 | Directive Apply Account | Multi-segment account name                             | Yes          | No         | No          |
 | Directive Apply Account | Inline comment                                         | Yes          | No         | No          |
-| Directive Commodity     | Minimal                                                | No           | No         | No          |
-| Directive Commodity     | Without symbol                                         | No           | No         | No          |
-| Directive Commodity     | Without decimals                                       | No           | No         | No          |
-| Directive Commodity     | With space                                             | No           | No         | No          |
-| Directive Commodity     | Without format                                         | No           | No         | No          |
-| Directive Commodity     | With format subdirective                               | No           | No         | No          |
+| Directive Commodity     | Minimal                                                | Yes          | No         | No          |
+| Directive Commodity     | Without symbol                                         | Yes          | No         | No          |
+| Directive Commodity     | Without decimals                                       | Yes          | No         | No          |
+| Directive Commodity     | With space                                             | Yes          | No         | No          |
+| Directive Commodity     | Without format                                         | Yes          | No         | No          |
+| Directive Commodity     | With format subdirective                               | Yes          | No         | No          |
 | Directive Commodity     | Inline comment                                         | Yes          | No         | No          |
 | Directive D             | Minimal                                                | Yes          | No         | No          |
 | Directive D             | Inline comment                                         | Yes          | No         | No          |
