@@ -1,133 +1,92 @@
 ==================
-old: account directive with single-segment account name
+Minimal
 ==================
 account expenses
 
 ---
 
-(source_file
-  (account_directive
-    account_name: (account_name
-    (account_name_segment))))
+(TODO)
 
 ==================
-old: account directive with utf-8
-==================
-account expänses
-
----
-
-(source_file
-  (account_directive
-    account_name: (account_name
-    (account_name_segment))))
-
-==================
-old: account directive with numeric content
-==================
-account expenses:2021:huh
-
----
-
-(source_file
-  (account_directive
-    account_name: (account_name
-    (account_name_segment)
-    (account_name_segment)
-    (account_name_segment))))
-
-==================
-old: account directive with symbols
-==================
-account expenses:some-oth€r$ym&bols
-
----
-
-(source_file
-  (account_directive
-    account_name: (account_name
-    (account_name_segment)
-    (account_name_segment))))
-
-==================
-old: account directive with ;
-==================
-account expenses:with;semicolon ;:oof
-
----
-
-(source_file
-  (account_directive
-    account_name: (account_name
-    (account_name_segment)
-    (account_name_segment)
-    (account_name_segment))))
-
-==================
-old: account directive with single letter name
-==================
-account A
-
----
-
-(source_file
-  (account_directive
-    account_name: (account_name
-    (account_name_segment))))
-
-==================
-old: account directive with multi-segment account name
+Multi-segment name
 ==================
 account expenses:groceries:sweets
 
 ---
 
-(source_file
-  (account_directive
-    account_name: (account_name
-    (account_name_segment)
-    (account_name_segment)
-    (account_name_segment))))
+(TODO)
 
 ==================
-old: account directive with multi-segment account name including whitespace
-==================
-account expenses:a little snack
-
----
-
-(source_file
-  (account_directive
-    account_name: (account_name
-    (account_name_segment)
-    (account_name_segment))))
-
-==================
-old: account directive with multi-segment account name including special chars
+Multi-segment name with special characters
 ==================
 account expenses:groceries:indulgence:süßigkeiten
 
 ---
 
-(source_file
-  (account_directive
-    account_name: (account_name
-    (account_name_segment)
-    (account_name_segment)
-    (account_name_segment)
-    (account_name_segment))))
+(TODO)
 
 ==================
-old: account directive with multiple spaces before the account name
+Multi-segment name with whitespace
+==================
+account expenses:a little snack
+
+---
+
+(TODO)
+
+==================
+Name including UTF-8
+==================
+account expänses
+
+---
+
+(TODO)
+
+==================
+Name with numeric content
+==================
+account expenses:2021:huh
+
+---
+
+(TODO)
+
+==================
+Name with symbols
+==================
+account expenses:some-oth€r$ym&bols
+
+---
+
+(TODO)
+
+==================
+Name with semicolon
+==================
+account expenses:with;semicolon ;:oof
+
+---
+
+(TODO)
+
+==================
+Single letter name
+==================
+account A
+
+---
+
+(TODO)
+
+==================
+Multiple spaces before account name
 ==================
 account    expenses
 
 ---
 
-(source_file
-  (account_directive
-    account_name: (account_name
-    (account_name_segment))))
+(TODO)
 
 ==================
 Inline comment
@@ -162,10 +121,29 @@ account expenses:groceries  ;
 (TODO)
 
 ==================
+Inline comment with tags
+==================
+account foo:bar  ; a comment accounttype:important, category:hushmoney
+
+---
+
+(TODO)
+
+==================
 Following comment
 ==================
 account foo:bar
   ; a comment
+
+---
+
+(TODO)
+
+==================
+Following comment with tags
+==================
+account foo:bar
+  ; category:tax-evasion
 
 ---
 

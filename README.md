@@ -45,19 +45,19 @@ Test names start with `<feature>` and have an optional suffix, if there are mult
 | Periodic Transaction    | Minimal                                                | No           | No         | No          |
 | Periodic Transaction    | Description                                            | No           | No         | No          |
 | Auto Posting            | Minimal                                                | No           | No         | No          |
-| Directive Account       | Minimal                                                | No           | No         | No          |
-| Directive Account       | Multi-segment name                                     | No           | No         | No          |
-| Directive Account       | Multi-segment name with whitespace                     | No           | No         | No          |
-| Directive Account       | Name including UTF-8                                   | No           | No         | No          |
-| Directive Account       | Name with numeric content                              | No           | No         | No          |
-| Directive Account       | Name with symbols                                      | No           | No         | No          |
-| Directive Account       | Name with semicolon                                    | No           | No         | No          |
-| Directive Account       | Single letter name                                     | No           | No         | No          |
-| Directive Account       | Multiple spaces before account name                    | No           | No         | No          |
+| Directive Account       | Minimal                                                | Yes          | No         | No          |
+| Directive Account       | Multi-segment name                                     | Yes          | No         | No          |
+| Directive Account       | Multi-segment name with whitespace                     | Yes          | No         | No          |
+| Directive Account       | Name including UTF-8                                   | Yes          | No         | No          |
+| Directive Account       | Name with numeric content                              | Yes          | No         | No          |
+| Directive Account       | Name with symbols                                      | Yes          | No         | No          |
+| Directive Account       | Name with semicolon                                    | Yes          | No         | No          |
+| Directive Account       | Single letter name                                     | Yes          | No         | No          |
+| Directive Account       | Multiple spaces before account name                    | Yes          | No         | No          |
 | Directive Account       | Inline comment                                         | Yes          | No         | No          |
-| Directive Account       | Inline comment with tag                                | No           | No         | No          |
+| Directive Account       | Inline comment with tags                               | Yes          | No         | No          |
 | Directive Account       | Following comment                                      | Yes          | No         | No          |
-| Directive Account       | Following comment with tag                             | No           | No         | No          |
+| Directive Account       | Following comment with tags                            | Yes          | No         | No          |
 | Directive Alias         | Minimal                                                | No           | No         | No          |
 | Directive Alias         | Multi-segment name                                     | No           | No         | No          |
 | Directive Alias         | Regex                                                  | No           | No         | No          |
