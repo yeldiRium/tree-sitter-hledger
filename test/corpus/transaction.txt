@@ -1,5 +1,5 @@
 ==================
-transaction with all features
+Complete
 ==================
 2025-05-24 ! (code) Payee | why do i do this?  ; because
     ; for some reason
@@ -15,21 +15,60 @@ transaction with all features
 (TODO)
 
 ==================
-transaction minimal
+Minimal
 ==================
 2025-05-24
-    expenses:groceries
 
 ---
 
 (TODO)
 
 ==================
-transaction average
+Common example
 ==================
 2025-05-24 Payee | Reason
     expenses:groceries  12.34 €
     assets:cash  -12.34 €
+
+---
+
+(TODO)
+
+==================
+Description
+==================
+2025-05-24 Description
+    expenses
+
+---
+
+(TODO)
+
+==================
+Payee and note
+==================
+2025-05-24 Payee | Note
+    expenses
+
+---
+
+(TODO)
+
+==================
+Status Pending
+==================
+2025-05-24 ! note
+    expenses
+
+---
+
+(TODO)
+
+==================
+Status Cleared
+==================
+2025-05-24 * note
+    expenses
 
 ---
 
@@ -45,10 +84,29 @@ Inline comment
 (TODO)
 
 ==================
+Inline comment with tags
+==================
+2025-05-24 Something ; a comment event:2025-05-24_cool-event, partying:
+
+---
+
+(TODO)
+
+==================
 Following comment
 ==================
 2025-05-24 Something
   ; a comment
+
+---
+
+(TODO)
+
+==================
+Following comment wiht tags
+==================
+2025-05-24 Something
+  ; event:2025-05-24_cool-event, partying:
 
 ---
 

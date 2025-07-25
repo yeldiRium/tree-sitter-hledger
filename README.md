@@ -12,16 +12,17 @@ Test names start with `<feature>` and have an optional suffix, if there are mult
 
 | Topic                   | Feature                                                | Has Testcase | Has Design | Implemented |
 | :--                     | :--                                                    | --:          | --:        | --:         |
-| Transaction             | Minimal                                                | No           | No         | No          |
-| Transaction             | Payee                                                  | No           | No         | No          |
-| Transaction             | Description                                            | No           | No         | No          |
+| Transaction             | Complete                                               | Yes          | No         | No          |
+| Transaction             | Minimal                                                | Yes          | No         | No          |
+| Transaction             | Common example                                         | Yes          | No         | No          |
+| Transaction             | Description                                            | Yes          | No         | No          |
+| Transaction             | Payee and note                                         | Yes          | No         | No          |
+| Transaction             | Status                                                 | Yes          | No         | No          |
+| Transaction             | Code                                                   | Yes          | No         | No          |
 | Transaction             | Inline comment                                         | Yes          | No         | No          |
-| Transaction             | Inline comment with tags                               | No           | No         | No          |
+| Transaction             | Inline comment with tags                               | Yes          | No         | No          |
 | Transaction             | Following comment                                      | Yes          | No         | No          |
-| Transaction             | Following comment with tags                            | No           | No         | No          |
-| Transaction             | Minimal                                                | No           | No         | No          |
-| Transaction             | Status                                                 | No           | No         | No          |
-| Transaction             | Code                                                   | No           | No         | No          |
+| Transaction             | Following comment with tags                            | Yes          | No         | No          |
 | Posting                 | Minimal                                                | No           | No         | No          |
 | Posting                 | Multi-segment account name                             | No           | No         | No          |
 | Posting                 | Amount                                                 | No           | No         | No          |
