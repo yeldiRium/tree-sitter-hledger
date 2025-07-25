@@ -95,13 +95,13 @@ Test names start with `<feature>` and have an optional suffix, if there are mult
 | Directive Tag           | Inline comment                                         | Yes          | No         | No          |
 | Directive Y             | Minimal                                                | Yes          | No         | No          |
 | Directive Y             | Inline comment                                         | Yes          | No         | No          |
-| Date                    | YYYY-MM-DD                                             | No           | No         | No          |
-| Date                    | YYYY/MM/DD                                             | No           | No         | No          |
-| Date                    | YYYY.MM.DD                                             | No           | No         | No          |
-| Date                    | MM-DD                                                  | No           | No         | No          |
-| Date                    | MM/DD                                                  | No           | No         | No          |
-| Date                    | MM.DD                                                  | No           | No         | No          |
-| Date                    | Secondary Date                                         | No           | No         | No          |
+| Date                    | YYYY-MM-DD                                             | Yes          | No         | No          |
+| Date                    | YYYY/MM/DD                                             | Yes          | No         | No          |
+| Date                    | YYYY.MM.DD                                             | Yes          | No         | No          |
+| Date                    | MM-DD                                                  | Yes          | No         | No          |
+| Date                    | MM/DD                                                  | Yes          | No         | No          |
+| Date                    | MM.DD                                                  | Yes          | No         | No          |
+| Date                    | Secondary Date                                         | Yes          | No         | No          |
 | Comment                 | Semicolon                                              | Yes          | Yes        | No          |
 | Comment                 | Hash                                                   | Yes          | Yes        | No          |
 | Comment                 | Asterisk                                               | Yes          | Yes        | No          |
