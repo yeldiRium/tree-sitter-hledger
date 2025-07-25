@@ -1,0 +1,10 @@
+==================
+Minimal
+==================
+= expenses:food
+    (liabilities:charity)  $-1
+
+---
+
+(TODO)
+

@@ -1,0 +1,22 @@
+==================
+Minimal
+==================
+~ monthly
+    expenses:groceries  12.34 €
+    assets:cash  -12.34 €
+
+---
+
+(TODO)
+
+==================
+Description
+==================
+~ monthly  Payee | note
+    expenses:groceries  12.34 €
+    assets:cash  -12.34 €
+
+---
+
+(TODO)
+

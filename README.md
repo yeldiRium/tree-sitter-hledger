@@ -42,9 +42,9 @@ Test names start with `<feature>` and have an optional suffix, if there are mult
 | Posting                 | Inline comment                                         | Yes          | No         | No          |
 | Posting                 | Inline comment with tags                               | Yes          | No         | No          |
 | Posting                 | Posting date                                           | Yes          | No         | No          |
-| Periodic Transaction    | Minimal                                                | No           | No         | No          |
-| Periodic Transaction    | Description                                            | No           | No         | No          |
-| Auto Posting            | Minimal                                                | No           | No         | No          |
+| Periodic Transaction    | Minimal                                                | Yes          | No         | No          |
+| Periodic Transaction    | Description                                            | Yes          | No         | No          |
+| Auto Posting            | Minimal                                                | Yes          | No         | No          |
 | Directive Account       | Minimal                                                | Yes          | No         | No          |
 | Directive Account       | Multi-segment name                                     | Yes          | No         | No          |
 | Directive Account       | Multi-segment name with whitespace                     | Yes          | No         | No          |
