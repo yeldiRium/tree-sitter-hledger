@@ -1,4 +1,174 @@
 ==================
+Minimal
+==================
+2025-05-24
+    expenses
+
+---
+
+(TODO)
+
+==================
+Multi-segment account name
+==================
+2025-05-24
+    expenses:groceries:sweets
+
+---
+
+(TODO)
+
+==================
+Amount
+==================
+2025-05-24
+    expenses  15.75 €
+
+---
+
+(TODO)
+
+==================
+Negative amount
+==================
+2025-05-24
+    expenses  -6.66 $
+
+---
+
+(TODO)
+
+==================
+Commodity
+==================
+2025-05-24
+    expenses  12.34 EUR
+
+---
+
+(TODO)
+
+==================
+Complex commodity
+==================
+2025-05-24
+    expenses  12.23 "Silver Coin"
+
+---
+
+(TODO)
+
+==================
+Balance assignment
+==================
+2025-05-24
+    expenses  = 100.00 €
+
+---
+
+(TODO)
+
+==================
+Balance assertion
+==================
+2025-05-24
+    expenses  -15.17 € = -5.84 €
+
+---
+
+(TODO)
+
+==================
+Subaccount-inclusive balance assertion
+==================
+2025-05-24
+    expenses  -15.17 € =* -5.84 €
+
+---
+
+(TODO)
+
+==================
+Sole commodity balance assertion
+==================
+2025-05-24
+    expenses  -15.17 == -5.84 $
+
+---
+
+(TODO)
+
+==================
+Subaccount-inclusive sole commodity balance assertion
+==================
+2025-05-24
+    expenses  -15.17 ==* -5.84 €
+
+---
+
+(TODO)
+
+==================
+Cost with price per unit
+==================
+2025-05-24
+    assets:stocks  3 Dingus @ 12.25 €
+
+---
+
+(TODO)
+
+==================
+Cost with total cost
+==================
+2025-05-24
+    assets:stocks  3 Dingus @@ 36.75 €
+
+---
+
+(TODO)
+
+==================
+Status pending
+==================
+2025-05-24
+    ! expenses
+
+---
+
+(TODO)
+
+==================
+Status cleared
+==================
+2025-05-24
+    * expenses
+
+---
+
+(TODO)
+
+==================
+Unbalanced virtual posting
+==================
+2025-05-24
+    (expenses)  -12.34 €
+
+---
+
+(TODO)
+
+==================
+Balanced virtual posting
+==================
+2025-05-24
+    [expenses]  -12.34 €
+
+---
+
+(TODO)
+
+==================
 Inline comment
 ==================
 2025-05-24 Something
