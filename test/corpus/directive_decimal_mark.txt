@@ -1,5 +1,5 @@
 ==================
-decimal-mark directive with .
+Dot
 ==================
 decimal-mark .
 
@@ -8,9 +8,18 @@ decimal-mark .
 (TODO)
 
 ==================
-decimal-mark directive with ,
+Comma
 ==================
 decimal-mark ,
+
+---
+
+(TODO)
+
+==================
+Inline comment
+==================
+decimal-mark .  ; a comment
 
 ---
 

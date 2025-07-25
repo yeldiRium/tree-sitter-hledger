@@ -1,5 +1,5 @@
 ==================
-comment with ;
+Semicolon
 ==================
 ; this is a comment
 
@@ -9,7 +9,7 @@ comment with ;
   (comment))
 
 ==================
-comment with ;, empty
+Semicolon empty
 ==================
 ; this is a comment
 
@@ -19,7 +19,7 @@ comment with ;, empty
   (comment))
 
 ==================
-comment with #
+Hash
 ==================
 # this is a comment
 
@@ -29,7 +29,7 @@ comment with #
   (comment))
 
 ==================
-comment with *
+Asterisk
 ==================
 * this is a comment
 
@@ -39,7 +39,7 @@ comment with *
   (comment))
 
 ==================
-comment with comment block
+Block
 ==================
 comment
 this is a block comment
@@ -52,7 +52,7 @@ end comment
   (comment))
 
 ==================
-comment with comment block, empty
+Block empty
 ==================
 comment
 end comment
@@ -61,154 +61,4 @@ end comment
 
 (source_file
   (comment))
-
-==================
-comment after account directive
-==================
-account foo:bar  ; a comment
-
----
-
-(TODO)
-
-==================
-note after account directive
-==================
-account foo:bar
-  ; a comment
-
----
-
-(TODO)
-
-==================
-comment after alias directive
-==================
-alias old = new  ; a comment
-
----
-
-(TODO)
-
-==================
-comment after commodity directive
-==================
-commodity 1,000.00 €  ; a comment
-
----
-
-(TODO)
-
-==================
-comment after D directive
-==================
-D 1,000.00 €  ; a comment
-
----
-
-(TODO)
-
-==================
-comment after decimal-mark directive
-==================
-decimal-mark .  ; a comment
-
----
-
-(TODO)
-
-==================
-comment after include directive
-==================
-include foo.journal  ; a comment
-
----
-
-(TODO)
-
-==================
-comment after P directive
-==================
-P 2025-05-24 $ 1.25 €  ; a comment
-
----
-
-(TODO)
-
-==================
-comment after payee directive
-==================
-payee Best Pizza  ; a comment
-
----
-
-(TODO)
-
-==================
-comment after tag directive
-==================
-tag item-id  ; a comment
-
----
-
-(TODO)
-
-==================
-comment after Y directive
-==================
-Y 2025  ; a comment
-
----
-
-(TODO)
-
-==================
-comment after transaction
-==================
-2025-05-24 Something ; a comment
-
----
-
-(TODO)
-
-==================
-note after transaction
-==================
-2025-05-24 Something
-  ; a comment
-
----
-
-(TODO)
-
-==================
-comment after posting
-==================
-2025-05-24 Something
-  foo:bar  100 €  ; a comment
-
----
-
-(TODO)
-
-==================
-comment after posting without amount
-==================
-2025-05-24 Something
-  foo:bar  ; a comment
-
----
-
-(TODO)
-
-==================
-note after posting
-==================
-2025-05-24 Something
-  foo:bar
-  ; a comment
-
----
-
-(TODO)
 

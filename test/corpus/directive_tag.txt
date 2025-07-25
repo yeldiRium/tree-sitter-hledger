@@ -1,7 +1,16 @@
 ==================
-tag directive
+Minimal
 ==================
 tag item-id
+
+---
+
+(TODO)
+
+==================
+Inline comment
+==================
+tag item-id  ; a comment
 
 ---
 

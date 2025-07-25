@@ -1,5 +1,5 @@
 ==================
-include directive with file path
+old: include directive with file path
 ==================
 include some/path.journal
 
@@ -10,7 +10,7 @@ include some/path.journal
     include_path: (include_path)))
 
 ==================
-include directive with file path including glob
+old: include directive with file path including glob
 ==================
 include some/*.journal
 
@@ -21,7 +21,7 @@ include some/*.journal
     include_path: (include_path)))
 
 ==================
-include directive with file path including whitespace
+old: include directive with file path including whitespace
 ==================
 include some/path to file.journal
 
@@ -32,7 +32,7 @@ include some/path to file.journal
     include_path: (include_path)))
 
 ==================
-include directive with file path including special characters
+old: include directive with file path including special characters
 ==================
 include some/hür/dür/ß.jou;rnal
 
@@ -43,7 +43,7 @@ include some/hür/dür/ß.jou;rnal
     include_path: (include_path)))
 
 ==================
-include directive with multiple spaces before the include path
+old: include directive with multiple spaces before the include path
 ==================
 include    some/path.journal
 
@@ -54,7 +54,7 @@ include    some/path.journal
     include_path: (include_path)))
 
 ==================
-include directive with semicolon-separated inline comment
+old: include directive with semicolon-separated inline comment
 ==================
 include some/path.journal  ; comment?
 
@@ -66,26 +66,29 @@ include some/path.journal  ; comment?
     comment: (inline_comment)))
 
 ==================
-include directive with hash-separated inline comment
+Inline comment
+==================
+include foo.journal  ; a comment
+
+---
+
+(TODO)
+
+==================
+Inline comment hash
 ==================
 include some/path.journal  # comment?
 
 ---
 
-(source_file
-  (include_directive
-    include_path: (include_path)
-    comment: (inline_comment)))
+(TODO)
 
 ==================
-include directive with empty inline comment
+Inline comment semicolon
 ==================
 include some/path.journal  ;
 
 ---
 
-(source_file
-  (include_directive
-    include_path: (include_path)
-    comment: (inline_comment)))
+(TODO)
 

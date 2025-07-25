@@ -1,5 +1,5 @@
 ==================
-apply-account directive
+Minimal
 ==================
 apply account new
 
@@ -8,9 +8,18 @@ apply account new
 (TODO)
 
 ==================
-apply-account directive with multiple segments
+Multi-segment account name
 ==================
 apply account new:global:parent
+
+---
+
+(TODO)
+
+==================
+Inline comment
+==================
+apply account new  ; comment
 
 ---
 

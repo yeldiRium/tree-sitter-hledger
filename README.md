@@ -15,9 +15,9 @@ Test names start with `<feature>` and have an optional suffix, if there are mult
 | Transaction             | Minimal                                                | No           | No         | No          |
 | Transaction             | Payee                                                  | No           | No         | No          |
 | Transaction             | Description                                            | No           | No         | No          |
-| Transaction             | Inline comment                                         | No           | No         | No          |
+| Transaction             | Inline comment                                         | Yes          | No         | No          |
 | Transaction             | Inline comment with tags                               | No           | No         | No          |
-| Transaction             | Following comment                                      | No           | No         | No          |
+| Transaction             | Following comment                                      | Yes          | No         | No          |
 | Transaction             | Following comment with tags                            | No           | No         | No          |
 | Transaction             | Minimal                                                | No           | No         | No          |
 | Transaction             | Status                                                 | No           | No         | No          |
@@ -38,14 +38,14 @@ Test names start with `<feature>` and have an optional suffix, if there are mult
 | Posting                 | Status                                                 | No           | No         | No          |
 | Posting                 | Unbalanced virtual posting                             | No           | No         | No          |
 | Posting                 | Balanced virtual posting                               | No           | No         | No          |
-| Posting                 | Inline comment                                         | No           | No         | No          |
+| Posting                 | Inline comment                                         | Yes          | No         | No          |
 | Posting                 | Inline comment with tags                               | No           | No         | No          |
 | Posting                 | Posting date                                           | No           | No         | No          |
-| Posting                 | Following comment                                      | No           | No         | No          |
+| Posting                 | Following comment                                      | Yes          | No         | No          |
 | Posting                 | Following comment with tags                            | No           | No         | No          |
 | Periodic Transaction    | Minimal                                                | No           | No         | No          |
 | Periodic Transaction    | Description                                            | No           | No         | No          |
-| Auto Postings           | Minimal                                                | No           | No         | No          |
+| Auto Posting            | Minimal                                                | No           | No         | No          |
 | Directive Account       | Minimal                                                | No           | No         | No          |
 | Directive Account       | Multi-segment name                                     | No           | No         | No          |
 | Directive Account       | Multi-segment name with whitespace                     | No           | No         | No          |
@@ -55,46 +55,47 @@ Test names start with `<feature>` and have an optional suffix, if there are mult
 | Directive Account       | Name with semicolon                                    | No           | No         | No          |
 | Directive Account       | Single letter name                                     | No           | No         | No          |
 | Directive Account       | Multiple spaces before account name                    | No           | No         | No          |
-| Directive Account       | Inline comment                                         | No           | No         | No          |
+| Directive Account       | Inline comment                                         | Yes          | No         | No          |
 | Directive Account       | Inline comment with tag                                | No           | No         | No          |
+| Directive Account       | Following comment                                      | Yes          | No         | No          |
 | Directive Account       | Following comment with tag                             | No           | No         | No          |
 | Directive Alias         | Minimal                                                | No           | No         | No          |
 | Directive Alias         | Multi-segment name                                     | No           | No         | No          |
 | Directive Alias         | Regex                                                  | No           | No         | No          |
 | Directive Alias         | End alias                                              | No           | No         | No          |
-| Directive Alias         | Inline comment                                         | No           | No         | No          |
-| Directive Apply Account | Minimal                                                | No           | No         | No          |
-| Directive Apply Account | Multi-segment account name                             | No           | No         | No          |
-| Directive Apply Account | Inline comment                                         | No           | No         | No          |
+| Directive Alias         | Inline comment                                         | Yes          | No         | No          |
+| Directive Apply Account | Minimal                                                | Yes          | No         | No          |
+| Directive Apply Account | Multi-segment account name                             | Yes          | No         | No          |
+| Directive Apply Account | Inline comment                                         | Yes          | No         | No          |
 | Directive Commodity     | Minimal                                                | No           | No         | No          |
 | Directive Commodity     | Without symbol                                         | No           | No         | No          |
 | Directive Commodity     | Without decimals                                       | No           | No         | No          |
 | Directive Commodity     | With space                                             | No           | No         | No          |
 | Directive Commodity     | Without format                                         | No           | No         | No          |
 | Directive Commodity     | With format subdirective                               | No           | No         | No          |
-| Directive Commodity     | Inline comment                                         | No           | No         | No          |
-| Directive D             | Minimal                                                | No           | No         | No          |
-| Directive D             | Inline Comment                                         | No           | No         | No          |
-| Directive Decimal Mark  | Dot                                                    | No           | No         | No          |
-| Directive Decimal Mark  | Comma                                                  | No           | No         | No          |
-| Directive Decimal Mark  | Inline comment                                         | No           | No         | No          |
+| Directive Commodity     | Inline comment                                         | Yes          | No         | No          |
+| Directive D             | Minimal                                                | Yes          | No         | No          |
+| Directive D             | Inline comment                                         | Yes          | No         | No          |
+| Directive Decimal Mark  | Dot                                                    | Yes          | No         | No          |
+| Directive Decimal Mark  | Comma                                                  | Yes          | No         | No          |
+| Directive Decimal Mark  | Inline comment                                         | Yes          | No         | No          |
 | Directive Include       | With file path                                         | No           | No         | No          |
 | Directive Include       | With file path including glob                          | No           | No         | No          |
 | Directive Include       | With file path including whitespace                    | No           | No         | No          |
 | Directive Include       | With file path including special characters            | No           | No         | No          |
 | Directive Include       | With file path including file format prefix            | No           | No         | No          |
 | Directive Include       | With multiple spaces before file path                  | No           | No         | No          |
-| Directive Include       | Inline comment                                         | No           | No         | No          |
-| Directive P             | Minimal                                                | No           | No         | No          |
-| Directive P             | Inline Comment                                         | No           | No         | No          |
-| Directive Payee         | Minimal                                                | No           | No         | No          |
-| Directive Payee         | With empty name                                        | No           | No         | No          |
-| Directive Payee         | With special characters                                | No           | No         | No          |
-| Directive Payee         | Inline comment                                         | No           | No         | No          |
-| Directive Tag           | Minimal                                                | No           | No         | No          |
-| Directive Tag           | Inline comment                                         | No           | No         | No          |
-| Directive Y             | Minimal                                                | No           | No         | No          |
-| Directive Y             | Inline comment                                         | No           | No         | No          |
+| Directive Include       | Inline comment                                         | Yes          | No         | No          |
+| Directive P             | Minimal                                                | Yes          | No         | No          |
+| Directive P             | Inline Comment                                         | Yes          | No         | No          |
+| Directive Payee         | Minimal                                                | Yes          | No         | No          |
+| Directive Payee         | With empty name                                        | Yes          | No         | No          |
+| Directive Payee         | With special characters                                | Yes          | No         | No          |
+| Directive Payee         | Inline comment                                         | Yes          | No         | No          |
+| Directive Tag           | Minimal                                                | Yes          | No         | No          |
+| Directive Tag           | Inline comment                                         | Yes          | No         | No          |
+| Directive Y             | Minimal                                                | Yes          | No         | No          |
+| Directive Y             | Inline comment                                         | Yes          | No         | No          |
 | Date                    | YYYY-MM-DD                                             | No           | No         | No          |
 | Date                    | YYYY/MM/DD                                             | No           | No         | No          |
 | Date                    | YYYY.MM.DD                                             | No           | No         | No          |
@@ -102,7 +103,7 @@ Test names start with `<feature>` and have an optional suffix, if there are mult
 | Date                    | MM/DD                                                  | No           | No         | No          |
 | Date                    | MM.DD                                                  | No           | No         | No          |
 | Date                    | Secondary Date                                         | No           | No         | No          |
-| Comment                 | Semicolon                                              | No           | No         | No          |
-| Comment                 | Hash                                                   | No           | No         | No          |
-| Comment                 | Asterisk                                               | No           | No         | No          |
-| Comment                 | Block                                                  | No           | No         | No          |
+| Comment                 | Semicolon                                              | Yes          | Yes        | No          |
+| Comment                 | Hash                                                   | Yes          | Yes        | No          |
+| Comment                 | Asterisk                                               | Yes          | Yes        | No          |
+| Comment                 | Block                                                  | Yes          | Yes        | No          |

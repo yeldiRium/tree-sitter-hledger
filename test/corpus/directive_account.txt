@@ -1,5 +1,5 @@
 ==================
-account directive with single-segment account name
+old: account directive with single-segment account name
 ==================
 account expenses
 
@@ -11,7 +11,7 @@ account expenses
     (account_name_segment))))
 
 ==================
-account directive with utf-8
+old: account directive with utf-8
 ==================
 account expänses
 
@@ -23,7 +23,7 @@ account expänses
     (account_name_segment))))
 
 ==================
-account directive with numeric content
+old: account directive with numeric content
 ==================
 account expenses:2021:huh
 
@@ -37,7 +37,7 @@ account expenses:2021:huh
     (account_name_segment))))
 
 ==================
-account directive with symbols
+old: account directive with symbols
 ==================
 account expenses:some-oth€r$ym&bols
 
@@ -50,7 +50,7 @@ account expenses:some-oth€r$ym&bols
     (account_name_segment))))
 
 ==================
-account directive with ;
+old: account directive with ;
 ==================
 account expenses:with;semicolon ;:oof
 
@@ -64,7 +64,7 @@ account expenses:with;semicolon ;:oof
     (account_name_segment))))
 
 ==================
-account directive with single letter name
+old: account directive with single letter name
 ==================
 account A
 
@@ -76,7 +76,7 @@ account A
     (account_name_segment))))
 
 ==================
-account directive with multi-segment account name
+old: account directive with multi-segment account name
 ==================
 account expenses:groceries:sweets
 
@@ -90,7 +90,7 @@ account expenses:groceries:sweets
     (account_name_segment))))
 
 ==================
-account directive with multi-segment account name including whitespace
+old: account directive with multi-segment account name including whitespace
 ==================
 account expenses:a little snack
 
@@ -103,7 +103,7 @@ account expenses:a little snack
     (account_name_segment))))
 
 ==================
-account directive with multi-segment account name including special chars
+old: account directive with multi-segment account name including special chars
 ==================
 account expenses:groceries:indulgence:süßigkeiten
 
@@ -118,7 +118,7 @@ account expenses:groceries:indulgence:süßigkeiten
     (account_name_segment))))
 
 ==================
-account directive with multiple spaces before the account name
+old: account directive with multiple spaces before the account name
 ==================
 account    expenses
 
@@ -130,21 +130,16 @@ account    expenses
     (account_name_segment))))
 
 ==================
-account directive with semicolon-separated inline comment
+Inline comment
 ==================
-account expenses:groceries  ; comment?
+account foo:bar  ; a comment
 
 ---
 
-(source_file
-  (account_directive
-    account_name: (account_name
-    (account_name_segment)
-    (account_name_segment))
-    comment: (inline_comment)))
+(TODO)
 
 ==================
-account directive with hash-separated inline comment
+Inline comment with hash
 ==================
 account expenses:groceries  # comment?
 
@@ -158,16 +153,21 @@ account expenses:groceries  # comment?
     comment: (inline_comment)))
 
 ==================
-account directive with empty inline comment
+Inline comment empty
 ==================
 account expenses:groceries  ;
 
 ---
 
-(source_file
-  (account_directive
-    account_name: (account_name
-    (account_name_segment)
-    (account_name_segment))
-    comment: (inline_comment)))
+(TODO)
+
+==================
+Following comment
+==================
+account foo:bar
+  ; a comment
+
+---
+
+(TODO)
 

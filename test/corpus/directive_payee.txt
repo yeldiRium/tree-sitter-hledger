@@ -1,5 +1,5 @@
 ==================
-payee directive
+Minimal
 ==================
 payee Best Pizza
 
@@ -8,7 +8,7 @@ payee Best Pizza
 (TODO)
 
 ==================
-payee directive with empty name
+With empty name
 ==================
 payee ""
 
@@ -17,9 +17,18 @@ payee ""
 (TODO)
 
 ==================
-payee directive with symbols
+With special characters
 ==================
 payee thi$ pay€e i;s weird
+
+---
+
+(TODO)
+
+==================
+Inline comment
+==================
+payee Best Pizza  ; a comment
 
 ---
 

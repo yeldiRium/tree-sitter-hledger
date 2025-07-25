@@ -35,3 +35,22 @@ transaction average
 
 (TODO)
 
+==================
+Inline comment
+==================
+2025-05-24 Something ; a comment
+
+---
+
+(TODO)
+
+==================
+Following comment
+==================
+2025-05-24 Something
+  ; a comment
+
+---
+
+(TODO)
+
