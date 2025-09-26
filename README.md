@@ -18,54 +18,54 @@ Test names start with `<feature>` and have an optional suffix, if there are mult
 
 | Topic                   | Feature                                               | Has Testcase | Has Design | Implemented |
 | :--                     | :--                                                   | --:          | --:        | --:         |
-| Transaction             | Complete                                              | Yes          | Yes        | No          |
-| Transaction             | Minimal                                               | Yes          | Yes        | No          |
-| Transaction             | Common example                                        | Yes          | Yes        | No          |
-| Transaction             | Description                                           | Yes          | Yes        | No          |
-| Transaction             | Payee and note                                        | Yes          | Yes        | No          |
-| Transaction             | Status                                                | Yes          | Yes        | No          |
-| Transaction             | Code                                                  | Yes          | Yes        | No          |
-| Transaction             | Inline comment                                        | Yes          | Yes        | No          |
-| Transaction             | Inline comment with tags                              | Yes          | Yes        | No          |
-| Transaction             | Following comment                                     | Yes          | Yes        | No          |
-| Transaction             | Following comment with tags                           | Yes          | Yes        | No          |
-| Posting                 | Minimal                                               | Yes          | Yes        | No          |
-| Posting                 | Multi-segment account name                            | Yes          | Yes        | No          |
-| Posting                 | Amount                                                | Yes          | Yes        | No          |
-| Posting                 | Negative amount                                       | Yes          | Yes        | No          |
-| Posting                 | Commodity                                             | Yes          | Yes        | No          |
-| Posting                 | Complex commodity                                     | Yes          | Yes        | No          |
-| Posting                 | Flipped commodity                                     | Yes          | Yes        | No          |
-| Posting                 | Balance assignment                                    | Yes          | Yes        | No          |
-| Posting                 | Balance assertion                                     | Yes          | Yes        | No          |
-| Posting                 | Subaccount-inclusive balance assertion                | Yes          | Yes        | No          |
-| Posting                 | Sole commodity balance assertion                      | Yes          | Yes        | No          |
-| Posting                 | Subaccount-inclusive sole commodity balance assertion | Yes          | Yes        | No          |
-| Posting                 | Cost with price per unit                              | Yes          | Yes        | No          |
-| Posting                 | Cost with total cost                                  | Yes          | Yes        | No          |
-| Posting                 | Status                                                | Yes          | Yes        | No          |
-| Posting                 | Unbalanced virtual posting                            | Yes          | Yes        | No          |
-| Posting                 | Balanced virtual posting                              | Yes          | Yes        | No          |
-| Posting                 | Inline comment                                        | Yes          | Yes        | No          |
-| Posting                 | Inline comment with tags                              | Yes          | Yes        | No          |
-| Posting                 | Posting date                                          | Yes          | Yes        | No          |
+| Transaction             | Complete                                              | Yes          | Yes        | Yes         |
+| Transaction             | Minimal                                               | Yes          | Yes        | Yes         |
+| Transaction             | Common example                                        | Yes          | Yes        | Yes         |
+| Transaction             | Description                                           | Yes          | Yes        | Yes         |
+| Transaction             | Payee and note                                        | Yes          | Yes        | Yes         |
+| Transaction             | Status                                                | Yes          | Yes        | Yes         |
+| Transaction             | Code                                                  | Yes          | Yes        | Yes         |
+| Transaction             | Inline comment                                        | Yes          | Yes        | Yes         |
+| Transaction             | Inline comment with tags                              | No           | No         | No          |
+| Transaction             | Following comment                                     | Yes          | Yes        | Yes         |
+| Transaction             | Following comment with tags                           | No           | No         | No          |
+| Posting                 | Minimal                                               | Yes          | Yes        | Yes         |
+| Posting                 | Multi-segment account name                            | Yes          | Yes        | Yes         |
+| Posting                 | Amount                                                | Yes          | Yes        | Yes         |
+| Posting                 | Negative amount                                       | Yes          | Yes        | Yes         |
+| Posting                 | Commodity                                             | Yes          | Yes        | Yes         |
+| Posting                 | Complex commodity                                     | Yes          | Yes        | Yes         |
+| Posting                 | Flipped commodity                                     | Yes          | Yes        | Yes         |
+| Posting                 | Balance assignment                                    | Yes          | Yes        | Yes         |
+| Posting                 | Balance assertion                                     | Yes          | Yes        | Yes         |
+| Posting                 | Subaccount-inclusive balance assertion                | Yes          | Yes        | Yes         |
+| Posting                 | Sole commodity balance assertion                      | Yes          | Yes        | Yes         |
+| Posting                 | Subaccount-inclusive sole commodity balance assertion | Yes          | Yes        | Yes         |
+| Posting                 | Cost with price per unit                              | Yes          | Yes        | Yes         |
+| Posting                 | Cost with total cost                                  | Yes          | Yes        | Yes         |
+| Posting                 | Status                                                | Yes          | Yes        | Yes         |
+| Posting                 | Unbalanced virtual posting                            | No           | No         | No          |
+| Posting                 | Balanced virtual posting                              | No           | No         | No          |
+| Posting                 | Inline comment                                        | Yes          | Yes        | Yes         |
+| Posting                 | Inline comment with tags                              | No           | No         | No          |
+| Posting                 | Posting date                                          | No           | No         | No          |
 | Periodic Transaction    | Minimal                                               | Yes          | No         | No          |
 | Periodic Transaction    | Description                                           | Yes          | No         | No          |
 | Periodic Transaction    | Period                                                | No           | No         | No          |
 | Auto Posting            | Minimal                                               | Yes          | No         | No          |
-| Directive Account       | Minimal                                               | Yes          | No         | No          |
-| Directive Account       | Multi-segment name                                    | Yes          | No         | No          |
-| Directive Account       | Multi-segment name with whitespace                    | Yes          | No         | No          |
-| Directive Account       | Name including UTF-8                                  | Yes          | No         | No          |
-| Directive Account       | Name with numeric content                             | Yes          | No         | No          |
-| Directive Account       | Name with symbols                                     | Yes          | No         | No          |
-| Directive Account       | Name with semicolon                                   | Yes          | No         | No          |
-| Directive Account       | Single letter name                                    | Yes          | No         | No          |
-| Directive Account       | Multiple spaces before account name                   | Yes          | No         | No          |
-| Directive Account       | Inline comment                                        | Yes          | No         | No          |
-| Directive Account       | Inline comment with tags                              | Yes          | No         | No          |
-| Directive Account       | Following comment                                     | Yes          | No         | No          |
-| Directive Account       | Following comment with tags                           | Yes          | No         | No          |
+| Directive Account       | Minimal                                               | Yes          | Yes        | Yes         |
+| Directive Account       | Multi-segment name                                    | Yes          | Yes        | Yes         |
+| Directive Account       | Multi-segment name with whitespace                    | Yes          | Yes        | Yes         |
+| Directive Account       | Name including UTF-8                                  | Yes          | Yes        | Yes         |
+| Directive Account       | Name with numeric content                             | Yes          | Yes        | Yes         |
+| Directive Account       | Name with symbols                                     | Yes          | Yes        | Yes         |
+| Directive Account       | Name with semicolon                                   | Yes          | Yes        | Yes         |
+| Directive Account       | Single letter name                                    | Yes          | Yes        | Yes         |
+| Directive Account       | Multiple spaces before account name                   | Yes          | Yes        | Yes         |
+| Directive Account       | Inline comment                                        | Yes          | Yes        | Yes         |
+| Directive Account       | Inline comment with tags                              | No           | No         | No          |
+| Directive Account       | Following comment                                     | Yes          | Yes        | Yes         |
+| Directive Account       | Following comment with tags                           | No           | No         | No          |
 | Directive Alias         | Minimal                                               | Yes          | No         | No          |
 | Directive Alias         | Multi-segment name                                    | Yes          | No         | No          |
 | Directive Alias         | Regex                                                 | Yes          | No         | No          |
@@ -103,13 +103,13 @@ Test names start with `<feature>` and have an optional suffix, if there are mult
 | Directive Tag           | Inline comment                                        | Yes          | No         | No          |
 | Directive Y             | Minimal                                               | Yes          | No         | No          |
 | Directive Y             | Inline comment                                        | Yes          | No         | No          |
-| Date                    | YYYY-MM-DD                                            | Yes          | Yes        | No          |
-| Date                    | YYYY/MM/DD                                            | Yes          | Yes        | No          |
-| Date                    | YYYY.MM.DD                                            | Yes          | Yes        | No          |
-| Date                    | MM-DD                                                 | Yes          | Yes        | No          |
-| Date                    | MM/DD                                                 | Yes          | Yes        | No          |
-| Date                    | MM.DD                                                 | Yes          | Yes        | No          |
-| Date                    | Secondary Date                                        | Yes          | Yes        | No          |
+| Date                    | YYYY-MM-DD                                            | Yes          | Yes        | Yes         |
+| Date                    | YYYY/MM/DD                                            | Yes          | Yes        | Yes         |
+| Date                    | YYYY.MM.DD                                            | Yes          | Yes        | Yes         |
+| Date                    | MM-DD                                                 | Yes          | Yes        | Yes         |
+| Date                    | MM/DD                                                 | Yes          | Yes        | Yes         |
+| Date                    | MM.DD                                                 | Yes          | Yes        | Yes         |
+| Date                    | Secondary Date                                        | Yes          | Yes        | Yes         |
 | Comment                 | Semicolon                                             | Yes          | No         | No          |
 | Comment                 | Hash                                                  | Yes          | No         | No          |
 | Comment                 | Asterisk                                              | Yes          | No         | No          |
