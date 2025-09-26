@@ -17,8 +17,7 @@ Complete
     (date)
     (status)
     (code)
-    (description
-      (payee))
+    (description)
     (comment)
     (comment)
     (posting_plain
@@ -82,8 +81,7 @@ Common example
 (source_file
   (transaction_plain
     (date)
-    (description
-      (payee))
+    (description)
     (posting_plain
       (account)
       (amount
@@ -137,8 +135,7 @@ Payee and note
 (source_file
   (transaction_plain
     (date)
-    (description
-      (payee))
+    (description)
     (posting_plain
       (account))))
 
