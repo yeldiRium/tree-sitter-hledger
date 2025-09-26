@@ -118,19 +118,7 @@ account foo:bar  ; a comment
 (source_file
   (directive_account
     (account)
-    (comment)))
-
-==================
-Inline comment with hash
-==================
-account expenses:groceries  # comment?
-
----
-
-(source_file
-  (directive_account
-    (account)
-    (comment)))
+    (inline_comment)))
 
 ==================
 Inline comment empty
@@ -142,7 +130,7 @@ account expenses:groceries  ;
 (source_file
   (directive_account
     (account)
-    (comment)))
+    (inline_comment)))
 
 ==================
 Inline comment with tags
@@ -154,9 +142,7 @@ account foo:bar  ; a comment accounttype:important, category:hushmoney
 (source_file
   (directive_account
     (account)
-    (comment
-      (tag)
-      (tag))))
+    (inline_comment)))
 
 ==================
 Following comment
@@ -169,7 +155,7 @@ account foo:bar
 (source_file
   (directive_account
     (account)
-    (comment)))
+    (inline_comment)))
 
 ==================
 Following comment with tags
@@ -182,6 +168,5 @@ account foo:bar
 (source_file
   (directive_account
     (account)
-    (comment
-      (tag))))
+    (inline_comment)))
 

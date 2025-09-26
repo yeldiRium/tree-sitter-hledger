@@ -7,128 +7,120 @@
 /// <reference types="tree-sitter-cli/dsl" />
 // @ts-check
 
-const comment_indicators = [";", "#", "*"];
-const inline_comment_indicators = [";", "#"];
-
 export default grammar({
   name: "hledger",
 
   extras: _ => [],
 
+  inline: $ => [
+    $.whitespace,
+  ],
+
+  supertypes: $ => [
+    $.journal_item,
+    $.transaction,
+    $.directive,
+  ],
+
   rules: {
-    source_file: $ => repeat($._definition),
+    source_file: $ => repeat(choice($.journal_item, '\n')),
 
-    _definition: $ => choice(
-      seq(optional($._spaces1), $._newline),
-      $._directive,
-      $.comment,
+    journal_item: $ => choice(
+      $.transaction,
+      $.directive
     ),
 
-    //==================
-    // Directives
-    //==================
-    _directive: $ => seq(
-      choice(
-        $.account_directive,
-        $.include_directive,
-      ),
-      $._newline,
-    ),
-
-    account_directive: $ => seq(
-      "account",
-      $._spaces1,
-      field("account_name", $.account_name),
-      optional(field("comment", $.inline_comment)),
-    ),
-
-    include_directive: $ => seq(
-      "include",
-      $._spaces1,
-      field("include_path", $.include_path),
-      optional(field("comment", $.inline_comment)),
-    ),
-
-    //==================
-    // Components
-    //==================
-    account_name: $ => seq(
-      $.account_name_segment,
-      repeat(seq($._account_name_separator, $.account_name_segment)),
-    ),
-
-    //==================
-    // Comments
-    //==================
-    inline_comment: $ => seq(
-      $._spaces2,
-      choice(...inline_comment_indicators),
-      optional(seq(
-        $._spaces1,
-        $._comment_content,
-      )),
-    ),
-    comment: $ => prec.right(seq(
-      choice(...comment_indicators),
-      optional(seq(
-        $._spaces1,
-        $._comment_content,
-      )),
-    )),
-    _comment_content: $ => prec.right(seq(
-      $._comment_word,
-      repeat(seq(
-        $._spaces1,
-        $._comment_word,
+    transaction: $ => choice($.transaction_plain),
+    transaction_plain: $ => seq(
+      $.date,
+      optional(seq($.whitespace, $.status)),
+      optional(seq($.whitespace, $.code)),
+      optional(seq($.whitespace, $.description)),
+      optional(seq($.whitespace, $.inline_comment)),
+      '\n',
+      repeat(choice(
+        $.posting,
+        seq($.whitespace, $.inline_comment, '\n'),
       ))
-    )),
+    ),
 
-    inline_comment_with_tags: $ => seq(
-      $._spaces2,
-      choice(...inline_comment_indicators),
-      optional(seq(
-        $._spaces1,
-        $._inline_comment_with_tags_content,
+    date: $ => seq($._date, optional($.secondary_date)),
+    secondary_date: $ => seq('=', $._date),
+    _4d: _ => /\d{4}/,
+    _2d: _ => /\d{2}/,
+    _date_separator: _ => choice('-', '.', '/'),
+    _date: $ => choice(
+      seq($._4d, $._date_separator, $._2d, $._date_separator, $._2d),
+      seq($._2d, $._date_separator, $._2d),
+    ),
+
+    status: _ => choice('*', '!'),
+    code: _ => seq('(', /[^)]*/, ')'),
+    description: _ => /[^*!\(;\n][^\s;\n]*( [^\s;\n]+)*/,
+
+    posting: $ => seq(
+      $.whitespace,
+      optional(seq($.status, $.whitespace)),
+      $.account,
+      optional(choice(
+        seq($.whitespace, $.balance_assignment),
+        seq(
+          $.whitespace, $.amount,
+          optional(seq($.whitespace, choice(
+            $.price,
+            $.cost,
+          ))),
+          optional(seq($.whitespace, choice(
+            $.balance_assertion,
+            $.balance_assertion_subaccount_inclusive,
+            $.balance_assertion_sole_commodity,
+            $.balance_assertion_subaccount_inclusive_sole_commodity,
+          ))),
+        ),
+      )),
+      optional(seq($.whitespace, $.inline_comment)),
+      '\n',
+    ),
+
+    account: _ => /[^ ;\n](\S \S \S|\S \S|\S)*/,
+    balance_assignment: $ => seq('=', $.whitespace, $.amount),
+    price: $ => seq('@', $.whitespace, $.amount),
+    cost: $ => seq('@@', $.whitespace, $.amount),
+    balance_assertion: $ => seq('=', $.whitespace, $.amount),
+    balance_assertion_subaccount_inclusive: $ => seq('=*', $.whitespace, $.amount),
+    balance_assertion_sole_commodity: $ => seq('==', $.whitespace, $.amount),
+    balance_assertion_subaccount_inclusive_sole_commodity: $ => seq('==*', $.whitespace, $.amount),
+    amount: $ => choice(
+      seq($.quantity, $.whitespace, $.commodity),
+      seq($.commodity, $.whitespace, $.quantity),
+    ),
+    quantity: _ => seq(
+      optional(choice('+', '-')),
+      /\d+([ .,]\d+)*/,
+    ),
+    commodity: _ => choice(/\p{L}+/u, /\p{Sc}/u, /"[^"\n]*"/),
+
+
+    directive: $ => choice(
+      $.directive_account,
+    ),
+    directive_account: $ => seq(
+      'account', $.whitespace, $.account, optional(seq($.whitespace, $.inline_comment)), '\n',
+      optional(repeat1(seq($.whitespace, $.inline_comment, '\n')))
+    ),
+
+    comment: _ => seq(
+      choice(';', '#', '*'),
+      repeat(choice(
+        /[^\n]?/,
       )),
     ),
-    _inline_comment_with_tags_content: $ => choice(
-      seq(
-        $._comment_word,
-        optional(seq(
-          $._spaces1,
-          $._inline_comment_with_tags_content,
-        )),
-      ),
-      seq(
-        $.tag,
-        optional(seq(
-          ",", $._spaces1,
-          $._inline_comment_with_tags_content,
-        )),
-      ),
+
+    inline_comment: _ => seq(
+      ';',
+      /[^\n]*/,
     ),
 
-    tag: $ => prec.left(seq(
-      field("key", $.tag_key),
-      field("value", optional($.tag_value)),
-      optional(","),
-    )),
-
-    //==================
-    // Tokens
-    // Some of these seem unnecessarily complex. They are written to avoid
-    // double-spaces, since hledger uses double spaces to recognize the
-    // beginning of an inline comment.
-    //==================
-    include_path: _ => /[^ \n]+( [^ \n]+)*/,
-    account_name_segment: _ => /[^\(\)\[\]: \n]+( [^\(\)\[\]: \n]+)*/,
-    _account_name_separator: _ => /:/,
-    _comment_word: _ => /[^: \n]+/,
-    tag_key: _ => /[^:, \n]+:/,
-    tag_value: _ => /[^,\n]+/,
-
-    _spaces1: _ => / {1,}/,
-    _spaces2: _ => / {2,}/,
-    _newline: _ => /\n/,
+    whitespace: _ => repeat1(choice(' ', '\t')),
   }
 });

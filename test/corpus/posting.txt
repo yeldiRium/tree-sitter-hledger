@@ -9,7 +9,7 @@ Minimal
 (source_file
   (transaction_plain
     (date)
-    (posting_plain
+    (posting
       (account))))
 
 ==================
@@ -23,7 +23,7 @@ Multi-segment account name
 (source_file
   (transaction_plain
     (date)
-    (posting_plain
+    (posting
       (account))))
 
 ==================
@@ -37,7 +37,7 @@ Amount
 (source_file
   (transaction_plain
     (date)
-    (posting_plain
+    (posting
       (account)
       (amount
         (quantity)
@@ -54,7 +54,7 @@ Negative amount
 (source_file
   (transaction_plain
     (date)
-    (posting_plain
+    (posting
       (account)
       (amount
         (quantity)
@@ -71,7 +71,7 @@ Commodity
 (source_file
   (transaction_plain
     (date)
-    (posting_plain
+    (posting
       (account)
       (amount
         (quantity)
@@ -88,7 +88,7 @@ Complex commodity
 (source_file
   (transaction_plain
     (date)
-    (posting_plain
+    (posting
       (account)
       (amount
         (quantity)
@@ -105,7 +105,7 @@ Flipped commodity
 (source_file
   (transaction_plain
     (date)
-    (posting_plain
+    (posting
       (account)
       (amount
         (commodity)
@@ -122,7 +122,7 @@ Balance assignment
 (source_file
   (transaction_plain
     (date)
-    (posting_plain
+    (posting
       (account)
       (balance_assignment
         (amount
@@ -140,7 +140,7 @@ Balance assertion
 (source_file
   (transaction_plain
     (date)
-    (posting_plain
+    (posting
       (account)
       (amount
         (quantity)
@@ -161,7 +161,7 @@ Subaccount-inclusive balance assertion
 (source_file
   (transaction_plain
     (date)
-    (posting_plain
+    (posting
       (account)
       (amount
         (quantity)
@@ -182,7 +182,7 @@ Sole commodity balance assertion
 (source_file
   (transaction_plain
     (date)
-    (posting_plain
+    (posting
       (account)
       (amount
         (quantity)
@@ -203,7 +203,7 @@ Subaccount-inclusive sole commodity balance assertion
 (source_file
   (transaction_plain
     (date)
-    (posting_plain
+    (posting
       (account)
       (amount
         (quantity)
@@ -224,7 +224,7 @@ Cost with price per unit
 (source_file
   (transaction_plain
     (date)
-    (posting_plain
+    (posting
       (account)
       (amount
         (quantity)
@@ -245,7 +245,7 @@ Cost with price per unit and balance assertion
 (source_file
   (transaction_plain
     (date)
-    (posting_plain
+    (posting
       (account)
       (amount
         (quantity)
@@ -270,7 +270,7 @@ Cost with price per unit and subaccount-inclusive balance assertion
 (source_file
   (transaction_plain
     (date)
-    (posting_plain
+    (posting
       (account)
       (amount
         (quantity)
@@ -295,7 +295,7 @@ Cost with price per unit and sole commodity balance assertion
 (source_file
   (transaction_plain
     (date)
-    (posting_plain
+    (posting
       (account)
       (amount
         (quantity)
@@ -320,7 +320,7 @@ Cost with price per unit and subaccount-inclusive sole commodity balance asserti
 (source_file
   (transaction_plain
     (date)
-    (posting_plain
+    (posting
       (account)
       (amount
         (quantity)
@@ -345,7 +345,7 @@ Cost with total cost
 (source_file
   (transaction_plain
     (date)
-    (posting_plain
+    (posting
       (account)
       (amount
         (quantity)
@@ -366,7 +366,7 @@ Cost with total cost and balance assertion
 (source_file
   (transaction_plain
     (date)
-    (posting_plain
+    (posting
       (account)
       (amount
         (quantity)
@@ -391,7 +391,7 @@ Cost with total cost and subaccount-inclusive balance assertion
 (source_file
   (transaction_plain
     (date)
-    (posting_plain
+    (posting
       (account)
       (amount
         (quantity)
@@ -416,7 +416,7 @@ Cost with total cost and sole commodity balance assertion
 (source_file
   (transaction_plain
     (date)
-    (posting_plain
+    (posting
       (account)
       (amount
         (quantity)
@@ -441,7 +441,7 @@ Cost with total cost and subaccount-inclusive sole commodity balance assertion
 (source_file
   (transaction_plain
     (date)
-    (posting_plain
+    (posting
       (account)
       (amount
         (quantity)
@@ -466,7 +466,7 @@ Status pending
 (source_file
   (transaction_plain
     (date)
-    (posting_plain
+    (posting
       (status)
       (account))))
 
@@ -481,7 +481,7 @@ Status cleared
 (source_file
   (transaction_plain
     (date)
-    (posting_plain
+    (posting
       (status)
       (account))))
 
@@ -496,7 +496,7 @@ Unbalanced virtual posting
 (source_file
   (transaction_plain
     (date)
-    (posting_virtual_unbalanced
+    (posting
       (account)
       (amount
         (quantity)
@@ -513,7 +513,7 @@ Balanced virtual posting
 (source_file
   (transaction_plain
     (date)
-    (posting_virtual_balanced
+    (posting
       (account)
       (amount
         (quantity)
@@ -523,7 +523,7 @@ Balanced virtual posting
 Inline comment
 ==================
 2025-05-24 Something
-    expenses ; a comment
+    expenses  ; a comment
 
 ---
 
@@ -531,15 +531,15 @@ Inline comment
   (transaction_plain
     (date)
     (description)
-    (posting_plain
+    (posting
       (account)
-      (comment))))
+      (inline_comment))))
 
 ==================
 Inline comment with tags
 ==================
 2025-05-24 Something
-    expenses ; a comment event:2025-05-24_cool-event, partying:
+    expenses  ; a comment event:2025-05-24_cool-event, partying:
 
 ---
 
@@ -547,17 +547,15 @@ Inline comment with tags
   (transaction_plain
     (date)
     (description)
-    (posting_plain
+    (posting
       (account)
-      (comment
-        (tag)
-        (tag)))))
+      (inline_comment))))
 
 ==================
 Posting date
 ==================
 2025-05-24 Something
-    expenses ; date:2025-05-28
+    expenses  ; date:2025-05-28
 
 ---
 
@@ -565,8 +563,7 @@ Posting date
   (transaction_plain
     (date)
     (description)
-    (posting_plain
+    (posting
       (account)
-      (comment
-        (tag)))))
+      (inline_comment))))
 

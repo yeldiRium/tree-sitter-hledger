@@ -4,11 +4,11 @@ Complete
 2025-05-24 ! (code) Payee | why do i do this?  ; because
     ; for some reason
     ! expenses:expensive thing  1,000.00 $ @@ 1,234.56 €
-    ! assets:cash  € -1,234.56 ; date:2025-05-30
+    ! assets:cash  € -1,234.56  ; date:2025-05-30
     ; at least i have a few days time to pay this
     * [expenses:stupid tax]  1.234.56 €
     * [assets:stupid budget]  -1,234.56 €
-    * (expenses:aaaaaa) 1.234.56 €
+    * (expenses:aaaaaa)  1.234.56 €
 
 ---
 
@@ -18,9 +18,9 @@ Complete
     (status)
     (code)
     (description)
-    (comment)
-    (comment)
-    (posting_plain
+    (inline_comment)
+    (inline_comment)
+    (posting
       (status)
       (account)
       (amount
@@ -29,29 +29,28 @@ Complete
       (cost
         (amount
           (quantity)
-          (commodity))
-    (posting_plain
+          (commodity))))
+    (posting
       (status)
       (account)
       (amount
         (commodity)
         (quantity))
-      (comment
-        (tag)
-    (comment)
-    (posting_virtual_balanced
+      (inline_comment))
+    (inline_comment)
+    (posting
       (status)
       (account)
       (amount
         (quantity)
-        (commodity)
-    (posting_virtual_balanced
+        (commodity)))
+    (posting
       (status)
       (account)
       (amount
         (quantity)
-        (commodity)
-    (posting_virtual_balanced
+        (commodity)))
+    (posting
       (status)
       (account)
       (amount
@@ -67,7 +66,7 @@ Minimal
 
 (source_file
   (transaction_plain
-    (date))
+    (date)))
 
 ==================
 Common example
@@ -82,12 +81,12 @@ Common example
   (transaction_plain
     (date)
     (description)
-    (posting_plain
+    (posting
       (account)
       (amount
         (quantity)
-        (commodity)
-    (posting_plain
+        (commodity)))
+    (posting
       (account)
       (amount
         (quantity)
@@ -105,13 +104,13 @@ Description
   (transaction_plain
     (date)
     (description)
-    (posting_plain
+    (posting
       (account))))
 
 ==================
 Description with comment
 ==================
-2025-05-24 Description; comment
+2025-05-24 Description ; comment
     expenses
 
 ---
@@ -120,8 +119,8 @@ Description with comment
   (transaction_plain
     (date)
     (description)
-    (comment)
-    (posting_plain
+    (inline_comment)
+    (posting
       (account))))
 
 ==================
@@ -136,7 +135,7 @@ Payee and note
   (transaction_plain
     (date)
     (description)
-    (posting_plain
+    (posting
       (account))))
 
 ==================
@@ -152,7 +151,7 @@ Status Pending
     (date)
     (status)
     (description)
-    (posting_plain
+    (posting
       (account))))
 
 ==================
@@ -168,7 +167,7 @@ Status Cleared
     (date)
     (status)
     (description)
-    (posting_plain
+    (posting
       (account))))
 
 ==================
@@ -184,7 +183,7 @@ Code
     (date)
     (code)
     (description)
-    (posting_plain
+    (posting
       (account))))
 
 ==================
@@ -198,7 +197,7 @@ Inline comment
   (transaction_plain
     (date)
     (description)
-    (comment))
+    (inline_comment)))
 
 ==================
 Inline comment with tags
@@ -211,9 +210,7 @@ Inline comment with tags
   (transaction_plain
     (date)
     (description)
-    (comment
-      (tag)
-      (tag)))
+    (inline_comment)))
 
 ==================
 Following comment
@@ -227,7 +224,7 @@ Following comment
   (transaction_plain
     (date)
     (description)
-    (comment))
+    (inline_comment)))
 
 ==================
 Following comment with tags
@@ -241,7 +238,5 @@ Following comment with tags
   (transaction_plain
     (date)
     (description)
-    (comment
-      (tag)
-      (tag)))
+    (inline_comment)))
 

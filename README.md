@@ -2,6 +2,14 @@
 
 Inspired by https://github.com/cbarrete/tree-sitter-ledger/, this is a from-scratch development of a tree-sitter grammar for [hledger](https://hledger.org/dev/hledger.html) files.
 
+## Performance
+
+Some features are not present in the AST for performance reasons.
+Notably:
+- tags in comments need to be parsed out of comments
+- virtual accounts need to be differentiated by looking at their first character
+
+
 ## Completion Tracker
 
 Pinned to hledger version 1.43.

@@ -1,32 +1,40 @@
 [
   {
-    "type": "account_directive",
+    "type": "directive",
     "named": true,
-    "fields": {
-      "account_name": {
-        "multiple": false,
-        "required": true,
-        "types": [
-          {
-            "type": "account_name",
-            "named": true
-          }
-        ]
-      },
-      "comment": {
-        "multiple": false,
-        "required": false,
-        "types": [
-          {
-            "type": "inline_comment",
-            "named": true
-          }
-        ]
+    "subtypes": [
+      {
+        "type": "directive_account",
+        "named": true
       }
-    }
+    ]
   },
   {
-    "type": "account_name",
+    "type": "journal_item",
+    "named": true,
+    "subtypes": [
+      {
+        "type": "directive",
+        "named": true
+      },
+      {
+        "type": "transaction",
+        "named": true
+      }
+    ]
+  },
+  {
+    "type": "transaction",
+    "named": true,
+    "subtypes": [
+      {
+        "type": "transaction_plain",
+        "named": true
+      }
+    ]
+  },
+  {
+    "type": "amount",
     "named": true,
     "fields": {},
     "children": {
@@ -34,45 +42,232 @@
       "required": true,
       "types": [
         {
-          "type": "account_name_segment",
+          "type": "commodity",
+          "named": true
+        },
+        {
+          "type": "quantity",
           "named": true
         }
       ]
     }
   },
   {
-    "type": "comment",
+    "type": "balance_assertion",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": false,
+      "required": true,
+      "types": [
+        {
+          "type": "amount",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "balance_assertion_sole_commodity",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": false,
+      "required": true,
+      "types": [
+        {
+          "type": "amount",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "balance_assertion_subaccount_inclusive",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": false,
+      "required": true,
+      "types": [
+        {
+          "type": "amount",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "balance_assertion_subaccount_inclusive_sole_commodity",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": false,
+      "required": true,
+      "types": [
+        {
+          "type": "amount",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "balance_assignment",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": false,
+      "required": true,
+      "types": [
+        {
+          "type": "amount",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "code",
     "named": true,
     "fields": {}
   },
   {
-    "type": "include_directive",
+    "type": "commodity",
     "named": true,
-    "fields": {
-      "comment": {
-        "multiple": false,
-        "required": false,
-        "types": [
-          {
-            "type": "inline_comment",
-            "named": true
-          }
-        ]
-      },
-      "include_path": {
-        "multiple": false,
-        "required": true,
-        "types": [
-          {
-            "type": "include_path",
-            "named": true
-          }
-        ]
-      }
+    "fields": {}
+  },
+  {
+    "type": "cost",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": false,
+      "required": true,
+      "types": [
+        {
+          "type": "amount",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "date",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": false,
+      "required": false,
+      "types": [
+        {
+          "type": "secondary_date",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "directive_account",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": true,
+      "types": [
+        {
+          "type": "account",
+          "named": true
+        },
+        {
+          "type": "inline_comment",
+          "named": true
+        }
+      ]
     }
   },
   {
     "type": "inline_comment",
+    "named": true,
+    "fields": {}
+  },
+  {
+    "type": "posting",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": true,
+      "types": [
+        {
+          "type": "account",
+          "named": true
+        },
+        {
+          "type": "amount",
+          "named": true
+        },
+        {
+          "type": "balance_assertion",
+          "named": true
+        },
+        {
+          "type": "balance_assertion_sole_commodity",
+          "named": true
+        },
+        {
+          "type": "balance_assertion_subaccount_inclusive",
+          "named": true
+        },
+        {
+          "type": "balance_assertion_subaccount_inclusive_sole_commodity",
+          "named": true
+        },
+        {
+          "type": "balance_assignment",
+          "named": true
+        },
+        {
+          "type": "cost",
+          "named": true
+        },
+        {
+          "type": "inline_comment",
+          "named": true
+        },
+        {
+          "type": "price",
+          "named": true
+        },
+        {
+          "type": "status",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "price",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": false,
+      "required": true,
+      "types": [
+        {
+          "type": "amount",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "quantity",
+    "named": true,
+    "fields": {}
+  },
+  {
+    "type": "secondary_date",
     "named": true,
     "fields": {}
   },
@@ -86,22 +281,74 @@
       "required": false,
       "types": [
         {
-          "type": "account_directive",
-          "named": true
-        },
-        {
-          "type": "comment",
-          "named": true
-        },
-        {
-          "type": "include_directive",
+          "type": "journal_item",
           "named": true
         }
       ]
     }
   },
   {
-    "type": "#",
+    "type": "status",
+    "named": true,
+    "fields": {}
+  },
+  {
+    "type": "transaction_plain",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": true,
+      "types": [
+        {
+          "type": "code",
+          "named": true
+        },
+        {
+          "type": "date",
+          "named": true
+        },
+        {
+          "type": "description",
+          "named": true
+        },
+        {
+          "type": "inline_comment",
+          "named": true
+        },
+        {
+          "type": "posting",
+          "named": true
+        },
+        {
+          "type": "status",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "\t",
+    "named": false
+  },
+  {
+    "type": "\n",
+    "named": false
+  },
+  {
+    "type": " ",
+    "named": false
+  },
+  {
+    "type": "!",
+    "named": false
+  },
+  {
+    "type": "(",
+    "named": false
+  },
+  {
+    "type": ")",
     "named": false
   },
   {
@@ -109,7 +356,47 @@
     "named": false
   },
   {
+    "type": "+",
+    "named": false
+  },
+  {
+    "type": "-",
+    "named": false
+  },
+  {
+    "type": ".",
+    "named": false
+  },
+  {
+    "type": "/",
+    "named": false
+  },
+  {
     "type": ";",
+    "named": false
+  },
+  {
+    "type": "=",
+    "named": false
+  },
+  {
+    "type": "=*",
+    "named": false
+  },
+  {
+    "type": "==",
+    "named": false
+  },
+  {
+    "type": "==*",
+    "named": false
+  },
+  {
+    "type": "@",
+    "named": false
+  },
+  {
+    "type": "@@",
     "named": false
   },
   {
@@ -117,15 +404,11 @@
     "named": false
   },
   {
-    "type": "account_name_segment",
+    "type": "account",
     "named": true
   },
   {
-    "type": "include",
-    "named": false
-  },
-  {
-    "type": "include_path",
+    "type": "description",
     "named": true
   }
 ]
