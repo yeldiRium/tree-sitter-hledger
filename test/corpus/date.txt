@@ -5,11 +5,9 @@ YYYY-MM-DD
 
 ---
 
-(journal
-  (journal_item
-    (transaction
-      (transaction_plain
-        (date)))))
+(source_file
+  (transaction_plain
+    (date)))
 
 ==================
 YYYY/MM/DD
@@ -18,11 +16,9 @@ YYYY/MM/DD
 
 ---
 
-(journal
-  (journal_item
-    (transaction
-      (transaction_plain
-        (date)))))
+(source_file
+  (transaction_plain
+    (date)))
 
 ==================
 YYYY.MM.DD
@@ -31,11 +27,9 @@ YYYY.MM.DD
 
 ---
 
-(journal
-  (journal_item
-    (transaction
-      (transaction_plain
-        (date)))))
+(source_file
+  (transaction_plain
+    (date)))
 
 ==================
 MM-DD
@@ -44,11 +38,9 @@ MM-DD
 
 ---
 
-(journal
-  (journal_item
-    (transaction
-      (transaction_plain
-        (date)))))
+(source_file
+  (transaction_plain
+    (date)))
 
 ==================
 MM/DD
@@ -57,11 +49,9 @@ MM/DD
 
 ---
 
-(journal
-  (journal_item
-    (transaction
-      (transaction_plain
-        (date)))))
+(source_file
+  (transaction_plain
+    (date)))
 
 ==================
 MM.DD
@@ -70,11 +60,9 @@ MM.DD
 
 ---
 
-(journal
-  (journal_item
-    (transaction
-      (transaction_plain
-        (date)))))
+(source_file
+  (transaction_plain
+    (date)))
 
 ==================
 Secondary date
@@ -83,10 +71,8 @@ Secondary date
 
 ---
 
-(journal
-  (journal_item
-    (transaction
-      (transaction_plain
-        (date)
-        (secondary_date))))
+(source_file
+  (transaction_plain
+    (date
+      (secondary_date))))
 

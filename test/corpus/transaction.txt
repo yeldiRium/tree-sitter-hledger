@@ -12,59 +12,52 @@ Complete
 
 ---
 
-(journal
-  (journal_item
-    (transaction
-      (transaction_plain
-        (date)
-        (status)
-        (code)
-        (description
-          (payee))
-        (comment)
-        (comment)
-        (posting
-          (posting_plain
-            (status)
-            (account)
-            (amount
-              (quantity)
-              (commodity))
-            (cost
-              (amount
-                (quantity)
-                (commodity)))))
-        (posting
-          (posting_plain
-            (status)
-            (account)
-            (amount
-              (commodity)
-              (quantity))
-            (comment
-              (tag))))
-        (comment)
-        (posting
-          (posting_virtual_balanced
-            (status)
-            (account)
-            (amount
-              (quantity)
-              (commodity))))
-        (posting
-          (posting_virtual_balanced
-            (status)
-            (account)
-            (amount
-              (quantity)
-              (commodity))))
-        (posting
-          (posting_virtual_balanced
-            (status)
-            (account)
-            (amount
-              (quantity)
-              (commodity))))))))
+(source_file
+  (transaction_plain
+    (date)
+    (status)
+    (code)
+    (description
+      (payee))
+    (comment)
+    (comment)
+    (posting_plain
+      (status)
+      (account)
+      (amount
+        (quantity)
+        (commodity))
+      (cost
+        (amount
+          (quantity)
+          (commodity))
+    (posting_plain
+      (status)
+      (account)
+      (amount
+        (commodity)
+        (quantity))
+      (comment
+        (tag)
+    (comment)
+    (posting_virtual_balanced
+      (status)
+      (account)
+      (amount
+        (quantity)
+        (commodity)
+    (posting_virtual_balanced
+      (status)
+      (account)
+      (amount
+        (quantity)
+        (commodity)
+    (posting_virtual_balanced
+      (status)
+      (account)
+      (amount
+        (quantity)
+        (commodity)))))
 
 ==================
 Minimal
@@ -73,11 +66,9 @@ Minimal
 
 ---
 
-(journal
-  (journal_item
-    (transaction
-      (transaction_plain
-        (date)))))
+(source_file
+  (transaction_plain
+    (date))
 
 ==================
 Common example
@@ -88,25 +79,21 @@ Common example
 
 ---
 
-(journal
-  (journal_item
-    (transaction
-      (transaction_plain
-        (date)
-        (description
-          (payee))
-        (posting
-          (posting_plain
-            (account)
-            (amount
-              (quantity)
-              (commodity))))
-        (posting
-          (posting_plain
-            (account)
-            (amount
-              (quantity)
-              (commodity))))))))
+(source_file
+  (transaction_plain
+    (date)
+    (description
+      (payee))
+    (posting_plain
+      (account)
+      (amount
+        (quantity)
+        (commodity)
+    (posting_plain
+      (account)
+      (amount
+        (quantity)
+        (commodity)))))
 
 ==================
 Description
@@ -116,15 +103,28 @@ Description
 
 ---
 
-(journal
-  (journal_item
-    (transaction
-      (transaction_plain
-        (date)
-        (description)
-        (posting
-          (posting_plain
-            (account)))))))
+(source_file
+  (transaction_plain
+    (date)
+    (description)
+    (posting_plain
+      (account))))
+
+==================
+Description with comment
+==================
+2025-05-24 Description; comment
+    expenses
+
+---
+
+(source_file
+  (transaction_plain
+    (date)
+    (description)
+    (comment)
+    (posting_plain
+      (account))))
 
 ==================
 Payee and note
@@ -134,16 +134,13 @@ Payee and note
 
 ---
 
-(journal
-  (journal_item
-    (transaction
-      (transaction_plain
-        (date)
-        (description
-          (payee))
-        (posting
-          (posting_plain
-            (account)))))))
+(source_file
+  (transaction_plain
+    (date)
+    (description
+      (payee))
+    (posting_plain
+      (account))))
 
 ==================
 Status Pending
@@ -153,16 +150,13 @@ Status Pending
 
 ---
 
-(journal
-  (journal_item
-    (transaction
-      (transaction_plain
-        (date)
-        (status)
-        (description)
-        (posting
-          (posting_plain
-            (account)))))))
+(source_file
+  (transaction_plain
+    (date)
+    (status)
+    (description)
+    (posting_plain
+      (account))))
 
 ==================
 Status Cleared
@@ -172,16 +166,13 @@ Status Cleared
 
 ---
 
-(journal
-  (journal_item
-    (transaction
-      (transaction_plain
-        (date)
-        (status)
-        (description)
-        (posting
-          (posting_plain
-            (account)))))))
+(source_file
+  (transaction_plain
+    (date)
+    (status)
+    (description)
+    (posting_plain
+      (account))))
 
 ==================
 Code
@@ -191,16 +182,13 @@ Code
 
 ---
 
-(journal
-  (journal_item
-    (transaction
-      (transaction_plain
-        (date)
-        (code)
-        (description)
-        (posting
-          (posting_plain
-            (account)))))))
+(source_file
+  (transaction_plain
+    (date)
+    (code)
+    (description)
+    (posting_plain
+      (account))))
 
 ==================
 Inline comment
@@ -209,13 +197,11 @@ Inline comment
 
 ---
 
-(journal
-  (journal_item
-    (transaction
-      (transaction_plain
-        (date)
-        (description)
-        (comment)))))
+(source_file
+  (transaction_plain
+    (date)
+    (description)
+    (comment))
 
 ==================
 Inline comment with tags
@@ -224,15 +210,13 @@ Inline comment with tags
 
 ---
 
-(journal
-  (journal_item
-    (transaction
-      (transaction_plain
-        (date)
-        (description)
-        (comment
-          (tag)
-          (tag))))))
+(source_file
+  (transaction_plain
+    (date)
+    (description)
+    (comment
+      (tag)
+      (tag)))
 
 ==================
 Following comment
@@ -242,13 +226,11 @@ Following comment
 
 ---
 
-(journal
-  (journal_item
-    (transaction
-      (transaction_plain
-        (date)
-        (description)
-        (comment)))))
+(source_file
+  (transaction_plain
+    (date)
+    (description)
+    (comment))
 
 ==================
 Following comment with tags
@@ -258,13 +240,11 @@ Following comment with tags
 
 ---
 
-(journal
-  (journal_item
-    (transaction
-      (transaction_plain
-        (date)
-        (description)
-        (comment
-          (tag)
-          (tag))))))
+(source_file
+  (transaction_plain
+    (date)
+    (description)
+    (comment
+      (tag)
+      (tag)))
 

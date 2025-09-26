@@ -5,7 +5,9 @@ account expenses
 
 ---
 
-(TODO)
+(source_file
+  (directive_account
+    (account)))
 
 ==================
 Multi-segment name
@@ -14,7 +16,9 @@ account expenses:groceries:sweets
 
 ---
 
-(TODO)
+(source_file
+  (directive_account
+    (account)))
 
 ==================
 Multi-segment name with special characters
@@ -23,7 +27,9 @@ account expenses:groceries:indulgence:süßigkeiten
 
 ---
 
-(TODO)
+(source_file
+  (directive_account
+    (account)))
 
 ==================
 Multi-segment name with whitespace
@@ -32,7 +38,9 @@ account expenses:a little snack
 
 ---
 
-(TODO)
+(source_file
+  (directive_account
+    (account)))
 
 ==================
 Name including UTF-8
@@ -41,7 +49,9 @@ account expänses
 
 ---
 
-(TODO)
+(source_file
+  (directive_account
+    (account)))
 
 ==================
 Name with numeric content
@@ -50,7 +60,9 @@ account expenses:2021:huh
 
 ---
 
-(TODO)
+(source_file
+  (directive_account
+    (account)))
 
 ==================
 Name with symbols
@@ -59,7 +71,9 @@ account expenses:some-oth€r$ym&bols
 
 ---
 
-(TODO)
+(source_file
+  (directive_account
+    (account)))
 
 ==================
 Name with semicolon
@@ -68,7 +82,9 @@ account expenses:with;semicolon ;:oof
 
 ---
 
-(TODO)
+(source_file
+  (directive_account
+    (account)))
 
 ==================
 Single letter name
@@ -77,7 +93,9 @@ account A
 
 ---
 
-(TODO)
+(source_file
+  (directive_account
+    (account)))
 
 ==================
 Multiple spaces before account name
@@ -86,7 +104,9 @@ account    expenses
 
 ---
 
-(TODO)
+(source_file
+  (directive_account
+    (account)))
 
 ==================
 Inline comment
@@ -95,7 +115,10 @@ account foo:bar  ; a comment
 
 ---
 
-(TODO)
+(source_file
+  (directive_account
+    (account)
+    (comment)))
 
 ==================
 Inline comment with hash
@@ -104,7 +127,10 @@ account expenses:groceries  # comment?
 
 ---
 
-(TODO)
+(source_file
+  (directive_account
+    (account)
+    (comment)))
 
 ==================
 Inline comment empty
@@ -113,7 +139,10 @@ account expenses:groceries  ;
 
 ---
 
-(TODO)
+(source_file
+  (directive_account
+    (account)
+    (comment)))
 
 ==================
 Inline comment with tags
@@ -122,7 +151,12 @@ account foo:bar  ; a comment accounttype:important, category:hushmoney
 
 ---
 
-(TODO)
+(source_file
+  (directive_account
+    (account)
+    (comment
+      (tag)
+      (tag))))
 
 ==================
 Following comment
@@ -132,7 +166,10 @@ account foo:bar
 
 ---
 
-(TODO)
+(source_file
+  (directive_account
+    (account)
+    (comment)))
 
 ==================
 Following comment with tags
@@ -142,5 +179,9 @@ account foo:bar
 
 ---
 
-(TODO)
+(source_file
+  (directive_account
+    (account)
+    (comment
+      (tag))))
 

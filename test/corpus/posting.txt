@@ -6,14 +6,11 @@ Minimal
 
 ---
 
-(journal
-  (journal_item)
-    (transaction
-      (transaction_plain
-        (date)
-        (posting
-          (posting_plain
-            (account)))))))
+(source_file
+  (transaction_plain
+    (date)
+    (posting_plain
+      (account))))
 
 ==================
 Multi-segment account name
@@ -23,14 +20,11 @@ Multi-segment account name
 
 ---
 
-(journal
-  (journal_item)
-    (transaction
-      (transaction_plain
-        (date)
-        (posting
-          (posting_plain
-            (account)))))))
+(source_file
+  (transaction_plain
+    (date)
+    (posting_plain
+      (account))))
 
 ==================
 Amount
@@ -40,17 +34,14 @@ Amount
 
 ---
 
-(journal
-  (journal_item)
-    (transaction
-      (transaction_plain
-        (date)
-        (posting
-          (posting_plain
-            (account)
-            (amount
-              (quantity)
-              (commodity)))))))
+(source_file
+  (transaction_plain
+    (date)
+    (posting_plain
+      (account)
+      (amount
+        (quantity)
+        (commodity)))))
 
 ==================
 Negative amount
@@ -60,17 +51,14 @@ Negative amount
 
 ---
 
-(journal
-  (journal_item)
-    (transaction
-      (transaction_plain
-        (date)
-        (posting
-          (posting_plain
-            (account)
-            (amount
-              (quantity)
-              (commodity)))))))
+(source_file
+  (transaction_plain
+    (date)
+    (posting_plain
+      (account)
+      (amount
+        (quantity)
+        (commodity)))))
 
 ==================
 Commodity
@@ -80,17 +68,14 @@ Commodity
 
 ---
 
-(journal
-  (journal_item)
-    (transaction
-      (transaction_plain
-        (date)
-        (posting
-          (posting_plain
-            (account)
-            (amount
-              (quantity)
-              (commodity)))))))
+(source_file
+  (transaction_plain
+    (date)
+    (posting_plain
+      (account)
+      (amount
+        (quantity)
+        (commodity)))))
 
 ==================
 Complex commodity
@@ -100,17 +85,14 @@ Complex commodity
 
 ---
 
-(journal
-  (journal_item)
-    (transaction
-      (transaction_plain
-        (date)
-        (posting
-          (posting_plain
-            (account)
-            (amount
-              (quantity)
-              (commodity)))))))
+(source_file
+  (transaction_plain
+    (date)
+    (posting_plain
+      (account)
+      (amount
+        (quantity)
+        (commodity)))))
 
 ==================
 Flipped commodity
@@ -120,17 +102,14 @@ Flipped commodity
 
 ---
 
-(journal
-  (journal_item)
-    (transaction
-      (transaction_plain
-        (date)
-        (posting
-          (posting_plain
-            (account)
-            (amount
-              (commodity)
-              (quantity)))))))
+(source_file
+  (transaction_plain
+    (date)
+    (posting_plain
+      (account)
+      (amount
+        (commodity)
+        (quantity)))))
 
 ==================
 Balance assignment
@@ -140,17 +119,15 @@ Balance assignment
 
 ---
 
-(journal
-  (journal_item
-    (transaction
-      (transaction_plain
-        (date)
-        (posting
-          (posting_balance_assignment
-            (account)
-            (amount_new
-              (quantity)
-              (commodity))))))))
+(source_file
+  (transaction_plain
+    (date)
+    (posting_plain
+      (account)
+      (balance_assignment
+        (amount
+          (quantity)
+          (commodity))))))
 
 ==================
 Balance assertion
@@ -160,20 +137,18 @@ Balance assertion
 
 ---
 
-(journal
-  (journal_item
-    (transaction
-      (transaction_plain
-        (date)
-        (posting
-          (posting_balance_assertion
-            (account)
-            (amount
-              (quantity)
-              (commodity))
-            (amount_new
-              (quantity)
-              (commodity))))))))
+(source_file
+  (transaction_plain
+    (date)
+    (posting_plain
+      (account)
+      (amount
+        (quantity)
+        (commodity))
+      (balance_assertion
+        (amount
+          (quantity)
+          (commodity))))))
 
 ==================
 Subaccount-inclusive balance assertion
@@ -183,66 +158,60 @@ Subaccount-inclusive balance assertion
 
 ---
 
-(journal
-  (journal_item
-    (transaction
-      (transaction_plain
-        (date)
-        (posting
-          (posting_balance_assertion_subaccount_inclusive
-            (account)
-            (amount
-              (quantity)
-              (commodity))
-            (amount_new
-              (quantity)
-              (commodity))))))))
+(source_file
+  (transaction_plain
+    (date)
+    (posting_plain
+      (account)
+      (amount
+        (quantity)
+        (commodity))
+      (balance_assertion_subaccount_inclusive
+        (amount
+          (quantity)
+          (commodity))))))
 
 ==================
 Sole commodity balance assertion
 ==================
 2025-05-24
-    expenses  -15.17 == -5.84 $
+    expenses  -15.17 € == -5.84 $
 
 ---
 
-(journal
-  (journal_item
-    (transaction
-      (transaction_plain
-        (date)
-        (posting
-          (posting_balance_assertion_sole_commodity
-            (account)
-            (amount
-              (quantity)
-              (commodity))
-            (amount_new
-              (quantity)
-              (commodity))))))))
+(source_file
+  (transaction_plain
+    (date)
+    (posting_plain
+      (account)
+      (amount
+        (quantity)
+        (commodity))
+      (balance_assertion_sole_commodity
+        (amount
+          (quantity)
+          (commodity))))))
 
 ==================
 Subaccount-inclusive sole commodity balance assertion
 ==================
 2025-05-24
-    expenses  -15.17 ==* -5.84 €
+    expenses  -15.17 € ==* -5.84 €
 
 ---
 
-(journal
-  (journal_item
-    (transaction
-      (transaction_plain
-        (date)
-        (posting
-          (posting_balance_assertion_subaccount_inclusive_sole_commodity
-            (account)
-            (amount
-              (quantity)
-              (commodity))
-            (amount_new
-              (quantity)
-              (commodity))))))))
+(source_file
+  (transaction_plain
+    (date)
+    (posting_plain
+      (account)
+      (amount
+        (quantity)
+        (commodity))
+      (balance_assertion_subaccount_inclusive_sole_commodity
+        (amount
+          (quantity)
+          (commodity))))))
 
 ==================
 Cost with price per unit
@@ -252,21 +221,118 @@ Cost with price per unit
 
 ---
 
-(journal
-  (journal_item
-    (transaction
-      (transaction_plain
-        (date)
-        (posting
-          (posting_plain
-            (account)
-            (amount
-              (quantity)
-              (commodity))
-            (price
-              (amount
-                (quantity)
-                (commodity)))))))))
+(source_file
+  (transaction_plain
+    (date)
+    (posting_plain
+      (account)
+      (amount
+        (quantity)
+        (commodity))
+      (price
+        (amount
+          (quantity)
+          (commodity))))))
+
+==================
+Cost with price per unit and balance assertion
+==================
+2025-05-24
+    assets:stocks  3 Dingus @ 12.25 € = 100.00 €
+
+---
+
+(source_file
+  (transaction_plain
+    (date)
+    (posting_plain
+      (account)
+      (amount
+        (quantity)
+        (commodity))
+      (price
+        (amount
+          (quantity)
+          (commodity)))
+      (balance_assertion
+        (amount
+          (quantity)
+          (commodity))))))
+
+==================
+Cost with price per unit and subaccount-inclusive balance assertion
+==================
+2025-05-24
+    assets:stocks  3 Dingus @ 12.25 € =* 100.00 €
+
+---
+
+(source_file
+  (transaction_plain
+    (date)
+    (posting_plain
+      (account)
+      (amount
+        (quantity)
+        (commodity))
+      (price
+        (amount
+          (quantity)
+          (commodity)))
+      (balance_assertion_subaccount_inclusive
+        (amount
+          (quantity)
+          (commodity))))))
+
+==================
+Cost with price per unit and sole commodity balance assertion
+==================
+2025-05-24
+    assets:stocks  3 Dingus @ 12.25 € == 100.00 €
+
+---
+
+(source_file
+  (transaction_plain
+    (date)
+    (posting_plain
+      (account)
+      (amount
+        (quantity)
+        (commodity))
+      (price
+        (amount
+          (quantity)
+          (commodity)))
+      (balance_assertion_sole_commodity
+        (amount
+          (quantity)
+          (commodity))))))
+
+==================
+Cost with price per unit and subaccount-inclusive sole commodity balance assertion
+==================
+2025-05-24
+    assets:stocks  3 Dingus @ 12.25 € ==* 100.00 €
+
+---
+
+(source_file
+  (transaction_plain
+    (date)
+    (posting_plain
+      (account)
+      (amount
+        (quantity)
+        (commodity))
+      (price
+        (amount
+          (quantity)
+          (commodity)))
+      (balance_assertion_subaccount_inclusive_sole_commodity
+        (amount
+          (quantity)
+          (commodity))))))
 
 ==================
 Cost with total cost
@@ -276,21 +342,118 @@ Cost with total cost
 
 ---
 
-(journal
-  (journal_item
-    (transaction
-      (transaction_plain
-        (date)
-        (posting
-          (posting_plain
-            (account)
-            (amount
-              (quantity)
-              (commodity))
-            (cost
-              (amount
-                (quantity)
-                (commodity)))))))))
+(source_file
+  (transaction_plain
+    (date)
+    (posting_plain
+      (account)
+      (amount
+        (quantity)
+        (commodity))
+      (cost
+        (amount
+          (quantity)
+          (commodity))))))
+
+==================
+Cost with total cost and balance assertion
+==================
+2025-05-24
+    assets:stocks  3 Dingus @@ 12.25 € = 100.00 €
+
+---
+
+(source_file
+  (transaction_plain
+    (date)
+    (posting_plain
+      (account)
+      (amount
+        (quantity)
+        (commodity))
+      (cost
+        (amount
+          (quantity)
+          (commodity)))
+      (balance_assertion
+        (amount
+          (quantity)
+          (commodity))))))
+
+==================
+Cost with total cost and subaccount-inclusive balance assertion
+==================
+2025-05-24
+    assets:stocks  3 Dingus @@ 12.25 € =* 100.00 €
+
+---
+
+(source_file
+  (transaction_plain
+    (date)
+    (posting_plain
+      (account)
+      (amount
+        (quantity)
+        (commodity))
+      (cost
+        (amount
+          (quantity)
+          (commodity)))
+      (balance_assertion_subaccount_inclusive
+        (amount
+          (quantity)
+          (commodity))))))
+
+==================
+Cost with total cost and sole commodity balance assertion
+==================
+2025-05-24
+    assets:stocks  3 Dingus @@ 12.25 € == 100.00 €
+
+---
+
+(source_file
+  (transaction_plain
+    (date)
+    (posting_plain
+      (account)
+      (amount
+        (quantity)
+        (commodity))
+      (cost
+        (amount
+          (quantity)
+          (commodity)))
+      (balance_assertion_sole_commodity
+        (amount
+          (quantity)
+          (commodity))))))
+
+==================
+Cost with total cost and subaccount-inclusive sole commodity balance assertion
+==================
+2025-05-24
+    assets:stocks  3 Dingus @@ 12.25 € ==* 100.00 €
+
+---
+
+(source_file
+  (transaction_plain
+    (date)
+    (posting_plain
+      (account)
+      (amount
+        (quantity)
+        (commodity))
+      (cost
+        (amount
+          (quantity)
+          (commodity)))
+      (balance_assertion_subaccount_inclusive_sole_commodity
+        (amount
+          (quantity)
+          (commodity))))))
 
 ==================
 Status pending
@@ -300,15 +463,12 @@ Status pending
 
 ---
 
-(journal
-  (journal_item
-    (transaction
-      (transaction_plain
-        (date)
-        (posting
-          (posting_plain
-            (status)
-            (account))))))
+(source_file
+  (transaction_plain
+    (date)
+    (posting_plain
+      (status)
+      (account))))
 
 ==================
 Status cleared
@@ -318,15 +478,12 @@ Status cleared
 
 ---
 
-(journal
-  (journal_item
-    (transaction
-      (transaction_plain
-        (date)
-        (posting
-          (posting_plain
-            (status)
-            (account))))))
+(source_file
+  (transaction_plain
+    (date)
+    (posting_plain
+      (status)
+      (account))))
 
 ==================
 Unbalanced virtual posting
@@ -336,17 +493,14 @@ Unbalanced virtual posting
 
 ---
 
-(journal
-  (journal_item
-    (transaction
-      (transaction_plain
-        (date)
-        (posting
-          (posting_virtual_unbalanced
-            (account)
-            (amount
-              (quantity)
-              (commodity))))))))
+(source_file
+  (transaction_plain
+    (date)
+    (posting_virtual_unbalanced
+      (account)
+      (amount
+        (quantity)
+        (commodity)))))
 
 ==================
 Balanced virtual posting
@@ -356,17 +510,14 @@ Balanced virtual posting
 
 ---
 
-(journal
-  (journal_item
-    (transaction
-      (transaction_plain
-        (date)
-        (posting
-          (posting_virtual_balanced
-            (account)
-            (amount
-              (quantity)
-              (commodity))))))))
+(source_file
+  (transaction_plain
+    (date)
+    (posting_virtual_balanced
+      (account)
+      (amount
+        (quantity)
+        (commodity)))))
 
 ==================
 Inline comment
@@ -376,16 +527,13 @@ Inline comment
 
 ---
 
-(journal
-  (journal_item
-    (transaction
-      (transaction_plain
-        (date)
-        (description)
-        (posting
-          (posting_plain
-            (account)
-            (comment)))))))
+(source_file
+  (transaction_plain
+    (date)
+    (description)
+    (posting_plain
+      (account)
+      (comment))))
 
 ==================
 Inline comment with tags
@@ -395,18 +543,15 @@ Inline comment with tags
 
 ---
 
-(journal
-  (journal_item
-    (transaction
-      (transaction_plain
-        (date)
-        (description)
-        (posting
-          (posting_plain
-            (account)
-            (comment
-              (tag)
-              (tag))))))))
+(source_file
+  (transaction_plain
+    (date)
+    (description)
+    (posting_plain
+      (account)
+      (comment
+        (tag)
+        (tag)))))
 
 ==================
 Posting date
@@ -416,15 +561,12 @@ Posting date
 
 ---
 
-(journal
-  (journal_item
-    (transaction
-      (transaction_plain
-        (date)
-        (description)
-        (posting
-          (posting_plain
-            (account)
-            (comment
-              (tag))))))))
+(source_file
+  (transaction_plain
+    (date)
+    (description)
+    (posting_plain
+      (account)
+      (comment
+        (tag)))))
 
