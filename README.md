@@ -23,25 +23,26 @@ Test names start with `<feature>` and have an optional suffix, if there are mult
 | Transaction             | Inline comment with tags                              | Yes          | No         | No          |
 | Transaction             | Following comment                                     | Yes          | No         | No          |
 | Transaction             | Following comment with tags                           | Yes          | No         | No          |
-| Posting                 | Minimal                                               | Yes          | No         | No          |
-| Posting                 | Multi-segment account name                            | Yes          | No         | No          |
-| Posting                 | Amount                                                | Yes          | No         | No          |
-| Posting                 | Negative amount                                       | Yes          | No         | No          |
-| Posting                 | Commodity                                             | Yes          | No         | No          |
-| Posting                 | Complex commodity                                     | Yes          | No         | No          |
-| Posting                 | Balance assignment                                    | Yes          | No         | No          |
-| Posting                 | Balance assertion                                     | Yes          | No         | No          |
-| Posting                 | Subaccount-inclusive balance assertion                | Yes          | No         | No          |
-| Posting                 | Sole commodity balance assertion                      | Yes          | No         | No          |
-| Posting                 | Subaccount-inclusive sole commodity balance assertion | Yes          | No         | No          |
-| Posting                 | Cost with price per unit                              | Yes          | No         | No          |
-| Posting                 | Cost with total cost                                  | Yes          | No         | No          |
-| Posting                 | Status                                                | Yes          | No         | No          |
-| Posting                 | Unbalanced virtual posting                            | Yes          | No         | No          |
-| Posting                 | Balanced virtual posting                              | Yes          | No         | No          |
-| Posting                 | Inline comment                                        | Yes          | No         | No          |
-| Posting                 | Inline comment with tags                              | Yes          | No         | No          |
-| Posting                 | Posting date                                          | Yes          | No         | No          |
+| Posting                 | Minimal                                               | Yes          | Yes        | No          |
+| Posting                 | Multi-segment account name                            | Yes          | Yes        | No          |
+| Posting                 | Amount                                                | Yes          | Yes        | No          |
+| Posting                 | Negative amount                                       | Yes          | Yes        | No          |
+| Posting                 | Commodity                                             | Yes          | Yes        | No          |
+| Posting                 | Complex commodity                                     | Yes          | Yes        | No          |
+| Posting                 | Flipped commodity                                     | Yes          | Yes        | No          |
+| Posting                 | Balance assignment                                    | Yes          | Yes        | No          |
+| Posting                 | Balance assertion                                     | Yes          | Yes        | No          |
+| Posting                 | Subaccount-inclusive balance assertion                | Yes          | Yes        | No          |
+| Posting                 | Sole commodity balance assertion                      | Yes          | Yes        | No          |
+| Posting                 | Subaccount-inclusive sole commodity balance assertion | Yes          | Yes        | No          |
+| Posting                 | Cost with price per unit                              | Yes          | Yes        | No          |
+| Posting                 | Cost with total cost                                  | Yes          | Yes        | No          |
+| Posting                 | Status                                                | Yes          | Yes        | No          |
+| Posting                 | Unbalanced virtual posting                            | Yes          | Yes        | No          |
+| Posting                 | Balanced virtual posting                              | Yes          | Yes        | No          |
+| Posting                 | Inline comment                                        | Yes          | Yes        | No          |
+| Posting                 | Inline comment with tags                              | Yes          | Yes        | No          |
+| Posting                 | Posting date                                          | Yes          | Yes        | No          |
 | Periodic Transaction    | Minimal                                               | Yes          | No         | No          |
 | Periodic Transaction    | Description                                           | Yes          | No         | No          |
 | Periodic Transaction    | Period                                                | No           | No         | No          |

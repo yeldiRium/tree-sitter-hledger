@@ -6,7 +6,14 @@ Minimal
 
 ---
 
-(TODO)
+(journal
+  (journal_item)
+    (transaction
+      (transaction_plain
+        (date)
+        (posting
+          (posting_plain
+            (account)))))))
 
 ==================
 Multi-segment account name
@@ -16,7 +23,14 @@ Multi-segment account name
 
 ---
 
-(TODO)
+(journal
+  (journal_item)
+    (transaction
+      (transaction_plain
+        (date)
+        (posting
+          (posting_plain
+            (account)))))))
 
 ==================
 Amount
@@ -26,7 +40,17 @@ Amount
 
 ---
 
-(TODO)
+(journal
+  (journal_item)
+    (transaction
+      (transaction_plain
+        (date)
+        (posting
+          (posting_plain
+            (account)
+            (amount
+              (quantity)
+              (commodity)))))))
 
 ==================
 Negative amount
@@ -36,7 +60,17 @@ Negative amount
 
 ---
 
-(TODO)
+(journal
+  (journal_item)
+    (transaction
+      (transaction_plain
+        (date)
+        (posting
+          (posting_plain
+            (account)
+            (amount
+              (quantity)
+              (commodity)))))))
 
 ==================
 Commodity
@@ -46,7 +80,17 @@ Commodity
 
 ---
 
-(TODO)
+(journal
+  (journal_item)
+    (transaction
+      (transaction_plain
+        (date)
+        (posting
+          (posting_plain
+            (account)
+            (amount
+              (quantity)
+              (commodity)))))))
 
 ==================
 Complex commodity
@@ -56,7 +100,37 @@ Complex commodity
 
 ---
 
-(TODO)
+(journal
+  (journal_item)
+    (transaction
+      (transaction_plain
+        (date)
+        (posting
+          (posting_plain
+            (account)
+            (amount
+              (quantity)
+              (commodity)))))))
+
+==================
+Flipped commodity
+==================
+2025-05-24
+    expenses  $ 12.23
+
+---
+
+(journal
+  (journal_item)
+    (transaction
+      (transaction_plain
+        (date)
+        (posting
+          (posting_plain
+            (account)
+            (amount
+              (commodity)
+              (quantity)))))))
 
 ==================
 Balance assignment
@@ -66,7 +140,17 @@ Balance assignment
 
 ---
 
-(TODO)
+(journal
+  (journal_item
+    (transaction
+      (transaction_plain
+        (date)
+        (posting
+          (posting_balance_assignment
+            (account)
+            (amount_new
+              (quantity)
+              (commodity))))))))
 
 ==================
 Balance assertion
@@ -76,7 +160,20 @@ Balance assertion
 
 ---
 
-(TODO)
+(journal
+  (journal_item
+    (transaction
+      (transaction_plain
+        (date)
+        (posting
+          (posting_balance_assertion
+            (account)
+            (amount
+              (quantity)
+              (commodity))
+            (amount_new
+              (quantity)
+              (commodity))))))))
 
 ==================
 Subaccount-inclusive balance assertion
@@ -86,7 +183,20 @@ Subaccount-inclusive balance assertion
 
 ---
 
-(TODO)
+(journal
+  (journal_item
+    (transaction
+      (transaction_plain
+        (date)
+        (posting
+          (posting_balance_assertion_subaccount_inclusive
+            (account)
+            (amount
+              (quantity)
+              (commodity))
+            (amount_new
+              (quantity)
+              (commodity))))))))
 
 ==================
 Sole commodity balance assertion
@@ -96,7 +206,20 @@ Sole commodity balance assertion
 
 ---
 
-(TODO)
+(journal
+  (journal_item
+    (transaction
+      (transaction_plain
+        (date)
+        (posting
+          (posting_balance_assertion_sole_commodity
+            (account)
+            (amount
+              (quantity)
+              (commodity))
+            (amount_new
+              (quantity)
+              (commodity))))))))
 
 ==================
 Subaccount-inclusive sole commodity balance assertion
@@ -106,7 +229,20 @@ Subaccount-inclusive sole commodity balance assertion
 
 ---
 
-(TODO)
+(journal
+  (journal_item
+    (transaction
+      (transaction_plain
+        (date)
+        (posting
+          (posting_balance_assertion_subaccount_inclusive_sole_commodity
+            (account)
+            (amount
+              (quantity)
+              (commodity))
+            (amount_new
+              (quantity)
+              (commodity))))))))
 
 ==================
 Cost with price per unit
@@ -116,7 +252,21 @@ Cost with price per unit
 
 ---
 
-(TODO)
+(journal
+  (journal_item
+    (transaction
+      (transaction_plain
+        (date)
+        (posting
+          (posting_plain
+            (account)
+            (amount
+              (quantity)
+              (commodity))
+            (price
+              (amount
+                (quantity)
+                (commodity)))))))))
 
 ==================
 Cost with total cost
@@ -126,7 +276,21 @@ Cost with total cost
 
 ---
 
-(TODO)
+(journal
+  (journal_item
+    (transaction
+      (transaction_plain
+        (date)
+        (posting
+          (posting_plain
+            (account)
+            (amount
+              (quantity)
+              (commodity))
+            (cost
+              (amount
+                (quantity)
+                (commodity)))))))))
 
 ==================
 Status pending
@@ -136,7 +300,15 @@ Status pending
 
 ---
 
-(TODO)
+(journal
+  (journal_item
+    (transaction
+      (transaction_plain
+        (date)
+        (posting
+          (posting_plain
+            (status)
+            (account))))))
 
 ==================
 Status cleared
@@ -146,7 +318,15 @@ Status cleared
 
 ---
 
-(TODO)
+(journal
+  (journal_item
+    (transaction
+      (transaction_plain
+        (date)
+        (posting
+          (posting_plain
+            (status)
+            (account))))))
 
 ==================
 Unbalanced virtual posting
@@ -156,7 +336,17 @@ Unbalanced virtual posting
 
 ---
 
-(TODO)
+(journal
+  (journal_item
+    (transaction
+      (transaction_plain
+        (date)
+        (posting
+          (posting_virtual_unbalanced
+            (account)
+            (amount
+              (quantity)
+              (commodity))))))))
 
 ==================
 Balanced virtual posting
@@ -166,7 +356,17 @@ Balanced virtual posting
 
 ---
 
-(TODO)
+(journal
+  (journal_item
+    (transaction
+      (transaction_plain
+        (date)
+        (posting
+          (posting_virtual_balanced
+            (account)
+            (amount
+              (quantity)
+              (commodity))))))))
 
 ==================
 Inline comment
@@ -176,7 +376,16 @@ Inline comment
 
 ---
 
-(TODO)
+(journal
+  (journal_item
+    (transaction
+      (transaction_plain
+        (date)
+        (description)
+        (posting
+          (posting_plain
+            (account)
+            (comment)))))))
 
 ==================
 Inline comment with tags
@@ -186,7 +395,18 @@ Inline comment with tags
 
 ---
 
-(TODO)
+(journal
+  (journal_item
+    (transaction
+      (transaction_plain
+        (date)
+        (description)
+        (posting
+          (posting_plain
+            (account)
+            (comment
+              (tag)
+              (tag))))))))
 
 ==================
 Posting date
@@ -196,5 +416,15 @@ Posting date
 
 ---
 
-(TODO)
+(journal
+  (journal_item
+    (transaction
+      (transaction_plain
+        (date)
+        (description)
+        (posting
+          (posting_plain
+            (account)
+            (comment
+              (tag))))))))
 
