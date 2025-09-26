@@ -5,8 +5,7 @@ Semicolon
 
 ---
 
-(source_file
-  (comment))
+(TODO)
 
 ==================
 Semicolon empty
@@ -15,8 +14,7 @@ Semicolon empty
 
 ---
 
-(source_file
-  (comment))
+(TODO)
 
 ==================
 Hash
@@ -25,8 +23,7 @@ Hash
 
 ---
 
-(source_file
-  (comment))
+(TODO)
 
 ==================
 Asterisk
@@ -35,8 +32,7 @@ Asterisk
 
 ---
 
-(source_file
-  (comment))
+(TODO)
 
 ==================
 Block
@@ -48,8 +44,7 @@ end comment
 
 ---
 
-(source_file
-  (comment))
+(TODO)
 
 ==================
 Block empty
@@ -59,6 +54,5 @@ end comment
 
 ---
 
-(source_file
-  (comment))
+(TODO)
 

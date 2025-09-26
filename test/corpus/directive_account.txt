@@ -104,12 +104,7 @@ account expenses:groceries  # comment?
 
 ---
 
-(source_file
-  (account_directive
-    account_name: (account_name
-    (account_name_segment)
-    (account_name_segment))
-    comment: (inline_comment)))
+(TODO)
 
 ==================
 Inline comment empty
