@@ -97,13 +97,13 @@ Test names start with `<feature>` and have an optional suffix, if there are mult
 | Directive Tag           | Inline comment                                        | Yes          | No         | No          |
 | Directive Y             | Minimal                                               | Yes          | No         | No          |
 | Directive Y             | Inline comment                                        | Yes          | No         | No          |
-| Date                    | YYYY-MM-DD                                            | Yes          | No         | No          |
-| Date                    | YYYY/MM/DD                                            | Yes          | No         | No          |
-| Date                    | YYYY.MM.DD                                            | Yes          | No         | No          |
-| Date                    | MM-DD                                                 | Yes          | No         | No          |
-| Date                    | MM/DD                                                 | Yes          | No         | No          |
-| Date                    | MM.DD                                                 | Yes          | No         | No          |
-| Date                    | Secondary Date                                        | Yes          | No         | No          |
+| Date                    | YYYY-MM-DD                                            | Yes          | Yes        | No          |
+| Date                    | YYYY/MM/DD                                            | Yes          | Yes        | No          |
+| Date                    | YYYY.MM.DD                                            | Yes          | Yes        | No          |
+| Date                    | MM-DD                                                 | Yes          | Yes        | No          |
+| Date                    | MM/DD                                                 | Yes          | Yes        | No          |
+| Date                    | MM.DD                                                 | Yes          | Yes        | No          |
+| Date                    | Secondary Date                                        | Yes          | Yes        | No          |
 | Comment                 | Semicolon                                             | Yes          | No         | No          |
 | Comment                 | Hash                                                  | Yes          | No         | No          |
 | Comment                 | Asterisk                                              | Yes          | No         | No          |
