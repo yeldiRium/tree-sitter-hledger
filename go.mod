@@ -1,4 +1,4 @@
-module github.com/yeldiRium/tree-sitter-hledger
+module github.com/yeldirium/tree-sitter-hledger
 
 go 1.22
 
