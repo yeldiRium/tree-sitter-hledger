@@ -12,17 +12,17 @@ Test names start with `<feature>` and have an optional suffix, if there are mult
 
 | Topic                   | Feature                                               | Has Testcase | Has Design | Implemented |
 | :--                     | :--                                                   | --:          | --:        | --:         |
-| Transaction             | Complete                                              | Yes          | No         | No          |
-| Transaction             | Minimal                                               | Yes          | No         | No          |
-| Transaction             | Common example                                        | Yes          | No         | No          |
-| Transaction             | Description                                           | Yes          | No         | No          |
-| Transaction             | Payee and note                                        | Yes          | No         | No          |
-| Transaction             | Status                                                | Yes          | No         | No          |
-| Transaction             | Code                                                  | Yes          | No         | No          |
-| Transaction             | Inline comment                                        | Yes          | No         | No          |
-| Transaction             | Inline comment with tags                              | Yes          | No         | No          |
-| Transaction             | Following comment                                     | Yes          | No         | No          |
-| Transaction             | Following comment with tags                           | Yes          | No         | No          |
+| Transaction             | Complete                                              | Yes          | Yes        | No          |
+| Transaction             | Minimal                                               | Yes          | Yes        | No          |
+| Transaction             | Common example                                        | Yes          | Yes        | No          |
+| Transaction             | Description                                           | Yes          | Yes        | No          |
+| Transaction             | Payee and note                                        | Yes          | Yes        | No          |
+| Transaction             | Status                                                | Yes          | Yes        | No          |
+| Transaction             | Code                                                  | Yes          | Yes        | No          |
+| Transaction             | Inline comment                                        | Yes          | Yes        | No          |
+| Transaction             | Inline comment with tags                              | Yes          | Yes        | No          |
+| Transaction             | Following comment                                     | Yes          | Yes        | No          |
+| Transaction             | Following comment with tags                           | Yes          | Yes        | No          |
 | Posting                 | Minimal                                               | Yes          | Yes        | No          |
 | Posting                 | Multi-segment account name                            | Yes          | Yes        | No          |
 | Posting                 | Amount                                                | Yes          | Yes        | No          |

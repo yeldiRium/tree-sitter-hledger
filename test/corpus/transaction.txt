@@ -4,7 +4,7 @@ Complete
 2025-05-24 ! (code) Payee | why do i do this?  ; because
     ; for some reason
     ! expenses:expensive thing  1,000.00 $ @@ 1,234.56 €
-    ! assets:cash  -1,234.56 € ; date:2025-05-30
+    ! assets:cash  € -1,234.56 ; date:2025-05-30
     ; at least i have a few days time to pay this
     * [expenses:stupid tax]  1.234.56 €
     * [assets:stupid budget]  -1,234.56 €
@@ -12,7 +12,59 @@ Complete
 
 ---
 
-(TODO)
+(journal
+  (journal_item
+    (transaction
+      (transaction_plain
+        (date)
+        (status)
+        (code)
+        (description
+          (payee))
+        (comment)
+        (comment)
+        (posting
+          (posting_plain
+            (status)
+            (account)
+            (amount
+              (quantity)
+              (commodity))
+            (cost
+              (amount
+                (quantity)
+                (commodity)))))
+        (posting
+          (posting_plain
+            (status)
+            (account)
+            (amount
+              (commodity)
+              (quantity))
+            (comment
+              (tag))))
+        (comment)
+        (posting
+          (posting_virtual_balanced
+            (status)
+            (account)
+            (amount
+              (quantity)
+              (commodity))))
+        (posting
+          (posting_virtual_balanced
+            (status)
+            (account)
+            (amount
+              (quantity)
+              (commodity))))
+        (posting
+          (posting_virtual_balanced
+            (status)
+            (account)
+            (amount
+              (quantity)
+              (commodity))))))))
 
 ==================
 Minimal
@@ -21,7 +73,11 @@ Minimal
 
 ---
 
-(TODO)
+(journal
+  (journal_item
+    (transaction
+      (transaction_plain
+        (date)))))
 
 ==================
 Common example
@@ -32,7 +88,25 @@ Common example
 
 ---
 
-(TODO)
+(journal
+  (journal_item
+    (transaction
+      (transaction_plain
+        (date)
+        (description
+          (payee))
+        (posting
+          (posting_plain
+            (account)
+            (amount
+              (quantity)
+              (commodity))))
+        (posting
+          (posting_plain
+            (account)
+            (amount
+              (quantity)
+              (commodity))))))))
 
 ==================
 Description
@@ -42,7 +116,15 @@ Description
 
 ---
 
-(TODO)
+(journal
+  (journal_item
+    (transaction
+      (transaction_plain
+        (date)
+        (description)
+        (posting
+          (posting_plain
+            (account)))))))
 
 ==================
 Payee and note
@@ -52,7 +134,16 @@ Payee and note
 
 ---
 
-(TODO)
+(journal
+  (journal_item
+    (transaction
+      (transaction_plain
+        (date)
+        (description
+          (payee))
+        (posting
+          (posting_plain
+            (account)))))))
 
 ==================
 Status Pending
@@ -62,7 +153,16 @@ Status Pending
 
 ---
 
-(TODO)
+(journal
+  (journal_item
+    (transaction
+      (transaction_plain
+        (date)
+        (status)
+        (description)
+        (posting
+          (posting_plain
+            (account)))))))
 
 ==================
 Status Cleared
@@ -72,7 +172,16 @@ Status Cleared
 
 ---
 
-(TODO)
+(journal
+  (journal_item
+    (transaction
+      (transaction_plain
+        (date)
+        (status)
+        (description)
+        (posting
+          (posting_plain
+            (account)))))))
 
 ==================
 Code
@@ -82,7 +191,16 @@ Code
 
 ---
 
-(TODO)
+(journal
+  (journal_item
+    (transaction
+      (transaction_plain
+        (date)
+        (code)
+        (description)
+        (posting
+          (posting_plain
+            (account)))))))
 
 ==================
 Inline comment
@@ -91,7 +209,13 @@ Inline comment
 
 ---
 
-(TODO)
+(journal
+  (journal_item
+    (transaction
+      (transaction_plain
+        (date)
+        (description)
+        (comment)))))
 
 ==================
 Inline comment with tags
@@ -100,7 +224,15 @@ Inline comment with tags
 
 ---
 
-(TODO)
+(journal
+  (journal_item
+    (transaction
+      (transaction_plain
+        (date)
+        (description)
+        (comment
+          (tag)
+          (tag))))))
 
 ==================
 Following comment
@@ -110,7 +242,13 @@ Following comment
 
 ---
 
-(TODO)
+(journal
+  (journal_item
+    (transaction
+      (transaction_plain
+        (date)
+        (description)
+        (comment)))))
 
 ==================
 Following comment with tags
@@ -120,5 +258,13 @@ Following comment with tags
 
 ---
 
-(TODO)
+(journal
+  (journal_item
+    (transaction
+      (transaction_plain
+        (date)
+        (description)
+        (comment
+          (tag)
+          (tag))))))
 
