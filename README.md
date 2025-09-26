@@ -110,7 +110,7 @@ Test names start with `<feature>` and have an optional suffix, if there are mult
 | Date                    | MM/DD                                                 | Yes          | Yes        | Yes         |
 | Date                    | MM.DD                                                 | Yes          | Yes        | Yes         |
 | Date                    | Secondary Date                                        | Yes          | Yes        | Yes         |
-| Comment                 | Semicolon                                             | Yes          | No         | No          |
-| Comment                 | Hash                                                  | Yes          | No         | No          |
-| Comment                 | Asterisk                                              | Yes          | No         | No          |
-| Comment                 | Block                                                 | Yes          | No         | No          |
+| Comment                 | Semicolon                                             | Yes          | Yes        | Yes         |
+| Comment                 | Hash                                                  | Yes          | Yes        | Yes         |
+| Comment                 | Asterisk                                              | Yes          | Yes        | Yes         |
+| Comment                 | Block                                                 | Yes          | Yes        | No          |

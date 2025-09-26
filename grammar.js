@@ -26,6 +26,7 @@ export default grammar({
     source_file: $ => repeat(choice($.journal_item, '\n')),
 
     journal_item: $ => choice(
+      $.comment,
       $.transaction,
       $.directive
     ),
@@ -111,11 +112,8 @@ export default grammar({
 
     comment: _ => seq(
       choice(';', '#', '*'),
-      repeat(choice(
-        /[^\n]?/,
-      )),
+      /[^\n]*/,
     ),
-
     inline_comment: _ => seq(
       ';',
       /[^\n]*/,

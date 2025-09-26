@@ -14,6 +14,10 @@
     "named": true,
     "subtypes": [
       {
+        "type": "comment",
+        "named": true
+      },
+      {
         "type": "directive",
         "named": true
       },
@@ -129,6 +133,11 @@
   },
   {
     "type": "code",
+    "named": true,
+    "fields": {}
+  },
+  {
+    "type": "comment",
     "named": true,
     "fields": {}
   },
@@ -341,6 +350,10 @@
   },
   {
     "type": "!",
+    "named": false
+  },
+  {
+    "type": "#",
     "named": false
   },
   {
